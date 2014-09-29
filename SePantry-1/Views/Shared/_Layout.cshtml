@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - SePantry</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        header *{
+            background-color:#048545;
+        }
+        /*float-right{
+            background-color:#048545;
+        }
+        float-left{
+            background-color:#048545;
+        }*/
+    </style>
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left" style="color:#048545">
+                <p class="site-title"><a href="Index"><img src="~/Content/images/selu_logo.png" /></a></p>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>
+                <nav>
+                    <ul id="menu">
+
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Product", "Index", "Active_Products")</li>
+                        <li>@Html.ActionLink("Customer", "Index", "Customer")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                @*<p>&copy; @DateTime.Now.Year</p>*@
+                <p>&copy;Roro @DateTime.Now.Year</p>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
