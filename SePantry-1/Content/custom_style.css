@@ -1,0 +1,19 @@
+body {
+  padding-top: 50px;min-height:75%;
+}
+.starter-template {
+  padding: 30px 15px;
+  text-align: center;
+}
+.navbara-header{max-height:60px;}
+.navbar-inverse{background:#006f53;}
+.content-start{margin-top:65px;}
+.navbar-nav{float:right;}
+.navbar-inverse .navbar-nav>li>a{color:#fff;}
+.navbar-inverse .navbar-nav>li>a:hover{text-decoration:underline;}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{border:none;}
+
+footer{background:#006f53;color:#fff;padding:12px;}
+
+.contact .label{color:#000;}
+.bs-callout .label{color:#000;}

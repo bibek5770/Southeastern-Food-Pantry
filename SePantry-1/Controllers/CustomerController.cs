@@ -61,7 +61,7 @@ namespace SePantry_1.Controllers
 
         //
         // GET: /Customer/Edit/5
-
+        
         public ActionResult Edit(int id = 0)
         {
             Customer customer = db.Customers.Find(id);
@@ -74,7 +74,7 @@ namespace SePantry_1.Controllers
 
         //
         // POST: /Customer/Edit/5
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Customer customer)
