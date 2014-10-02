@@ -81,7 +81,7 @@ namespace SePantry_1.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(admin).State =System.Data.Entity.EntityState.Modified;
+                db.Entry(admin).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
