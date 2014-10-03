@@ -90,6 +90,8 @@ C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\SePantry_1.pdb
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\Microsoft.Web.WebPages.OAuth.dll
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\Newtonsoft.Json.dll
+C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\PagedList.dll
+C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\PagedList.Mvc.dll
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\System.Net.Http.Formatting.dll
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\System.Web.Helpers.dll
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\System.Web.Http.dll
@@ -101,6 +103,8 @@ C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\System.Web.WebPage
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\System.Web.WebPages.Razor.dll
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\WebMatrix.Data.dll
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\WebMatrix.WebData.dll
+C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\PagedList.xml
+C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\PagedList.Mvc.xml
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\Microsoft.Web.Infrastructure.xml
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\System.Net.Http.Formatting.xml
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\System.Web.Helpers.xml

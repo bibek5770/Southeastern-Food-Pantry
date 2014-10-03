@@ -6,7 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SePantry_1.Models;
-
+using PagedList;
+using PagedList.Mvc;
 namespace SePantry_1.Controllers
 {
     public class CustomerController : Controller
@@ -16,9 +17,66 @@ namespace SePantry_1.Controllers
         //
         // GET: /Customer/
 
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString, string currentFilter, int? page)
         {
-            return View(db.Customers.ToList());
+            //paging
+            ViewBag.CurrentSort = sortOrder;
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+            var customer = from s in db.Customers
+                          select s;
+            //sorting data
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "firstName" : "";
+            ViewBag.NameSortParm1 = String.IsNullOrEmpty(sortOrder) ? "lastName" : "";
+            ViewBag.NameSortParm2 = String.IsNullOrEmpty(sortOrder) ? "emailAddress" : "";
+            ViewBag.NameSortParm3 = String.IsNullOrEmpty(sortOrder) ? "wNumber" : "";
+            ViewBag.NameSortParm4 = String.IsNullOrEmpty(sortOrder) ? "passwrord" : "";
+            switch (sortOrder)
+            {
+                case "firstName":
+                    customer = customer.OrderBy(s => s.firstName);
+                    break;
+                case "lastName":
+                    customer = customer.OrderBy(s => s.lastName);
+                    break;
+                case "emailAddress":
+                    customer = customer.OrderBy(s => s.emailAddress);
+                    break;
+                case "wNumber":
+                    customer = customer.OrderBy(s => s.wNumber);
+                    break;
+                case "password":
+                    customer = customer.OrderBy(s => s.password);
+                    break;
+                default:
+                    customer = customer.OrderBy(s => s.firstName);
+                    break;
+            }
+            //end of sorting
+            //for searching data
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                searchString = searchString.Trim();//ignore white space
+                customer = customer.Where(s => s.firstName.Contains(searchString)
+                        || s.lastName.Contains(searchString)
+                         || s.emailAddress.Contains(searchString)
+                           || s.wNumber.Contains(searchString));
+            }
+
+
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            return View(customer.ToPagedList(pageNumber, pageSize));
+            
         }
 
         //

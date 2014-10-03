@@ -18,6 +18,7 @@ namespace SePantry_1.Controllers
 
         public ActionResult Index()
         {
+            
             return View(db.Product_Details.ToList());
         }
 

@@ -6,6 +6,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SePantry_1.Models;
+using PagedList;
+using PagedList.Mvc;
+
 
 namespace SePantry_1.Controllers
 {
@@ -16,9 +19,61 @@ namespace SePantry_1.Controllers
         //
         // GET: /Active_Products/
 
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder,string searchString,string currentFilter,int? page)
         {
-            return View(db.Active_Products.ToList());
+            //paging
+            ViewBag.CurrentSort = sortOrder;
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+            var product = from s in db.Active_Products
+                          select s;
+            //sorting data
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "category" : "";
+            ViewBag.NameSortParm1 = String.IsNullOrEmpty(sortOrder) ? "title": "";
+            ViewBag.NameSortParm2 = String.IsNullOrEmpty(sortOrder) ? "manufacturer" : "";
+            ViewBag.NameSortParm3 = String.IsNullOrEmpty(sortOrder) ? "isCanned" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            switch (sortOrder)
+            {
+                case "category":
+                    product = product.OrderBy(s => s.category);
+                    break;
+                case "title":
+                    product = product.OrderBy(s => s.title);
+                    break;
+                case "manufacturer":
+                    product = product.OrderBy(s => s.manufacturer);
+                    break;
+                case "isCanned":
+                    product = product.OrderBy(s => s.isCanned);
+                    break;
+                default:
+                    product = product.OrderBy(s => s.category);
+                    break;
+            }
+            //end of sorting
+            //for searching data
+            
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                searchString = searchString.Trim();//ignore white space
+                product = product.Where(s => s.category.Contains(searchString)
+                        || s.title.Contains(searchString)
+                         || s.manufacturer.Contains(searchString));
+            }
+
+
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            return View(product.ToPagedList(pageNumber, pageSize));
         }
 
         //

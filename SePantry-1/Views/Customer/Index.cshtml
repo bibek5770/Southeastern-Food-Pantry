@@ -1,34 +1,46 @@
-﻿@model IEnumerable<SePantry_1.Models.Customer>
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<SePantry_1.Models.Customer>
 
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
     ViewBag.Title = "Customers List";
 }
-
-<h2>Customers List</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+
+    @using (Html.BeginForm())
+    {
+    <p align="right">
+        Search Customers: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" /><br />
+    </p>
+    }
+   <p> </p>
+
+   <h2>Customers List</h2>
+    <p><br /></p>
+<p>
+    @Html.ActionLink("Create New Customer", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.firstName)
+            @Html.ActionLink("firstName", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.lastName)
+            @Html.ActionLink("lastName", "Index", new { sortOrder = ViewBag.NameSortParm1 })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.emailAddress)
+            @Html.ActionLink("emailAddress", "Index", new { sortOrder = ViewBag.NameSortParm2 })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.wNumber)
+            @Html.ActionLink("wNumber", "Index", new { sortOrder = ViewBag.NameSortParm3 })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.password)
+            @Html.ActionLink("password", "Index", new { sortOrder = ViewBag.NameSortParm4 })
         </th>
         <th></th>
     </tr>
-
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -55,3 +67,8 @@
 }
 
 </table>
+<br /> <br />
+< Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

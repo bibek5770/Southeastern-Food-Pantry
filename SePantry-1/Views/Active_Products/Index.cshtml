@@ -1,29 +1,43 @@
-﻿@model IEnumerable<SePantry_1.Models.Active_Product>
-
+﻿
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<SePantry_1.Models.Active_Product>
+@*@model PagedList.IPagedList<SePantry_1.Models.Active_Product>*@
+           
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{
     ViewBag.Title = "Product Inventory";
 }
 
 <h2>Product Inventory - Active products</h2>
-<br />
 
-<p>
-    @Html.ActionLink("Add product to Inventory", "Create")
-</p>
+<p>  
+     
+    @using (Html.BeginForm()){   
+<p align="right">
+    Search Inventory: @Html.TextBox("SearchString") 
+    <input type="submit" value="Search" /><br />
+    </p>
+    }
+<p> </p>
+     
+
+@Html.ActionLink("Add product to Inventory", "Create")
 <p><br /></p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.category)
+           @Html.ActionLink("category", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.title)
+            @Html.ActionLink("title", "Index", new { sortOrder = ViewBag.NameSortParm1 })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.manufacturer)
+            @Html.ActionLink("manufacturer", "Index", new { sortOrder = ViewBag.NameSortParm2})
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.isCanned)
+            @Html.ActionLink("isCanned", "Index", new { sortOrder = ViewBag.NameSortParm3 })
+          
         </th>
         <th></th>
     </tr>
@@ -50,5 +64,9 @@
             </td>
         </tr>
     }
-
 </table>
+<br /> <br />
+< Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
