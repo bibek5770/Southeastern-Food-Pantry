@@ -1,6 +1,7 @@
 body {
   padding-top: 50px;min-height:75%;
 }
+
 .starter-template {
   padding: 30px 15px;
   text-align: center;
@@ -9,11 +10,72 @@ body {
 .navbar-inverse{background:#006f53;}
 .content-start{margin-top:65px;}
 .navbar-nav{float:right;}
-.navbar-inverse .navbar-nav>li>a{color:#fff;}
-.navbar-inverse .navbar-nav>li>a:hover{text-decoration:underline;}
+.navbar-inverse .navbar-nav>li>a{
+    color:#fff;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: .25px; 
+    display: inline-block;
+     -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transform: translateZ(0);
+     transform: translateZ(0);
+     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+    text-decoration:none;
+    /*background: rgba(255, 255, 255, 0.31);*/
+    color:  #dbb42f;
+    /*border-radius: 8px;
+    transition: background-color 0.45s ease-in-out, color 0.45s ease-in-out, border-bottom-color 0.45s ease-in-out;*/
+    -webkit-transform: scale(1.1);
+     transform: scale(1.1);
+}
+.navbar-inverse .navbar-nav>li>a.current {
+    text-decoration:none;
+    background: #fff;
+    color: #006f53;
+    border-radius: 8px;
+}
+
+
+
+/*
+.navbar-inverse .navbar-nav>li>a:active {
+   -webkit-animation-name: push;
+  animation-name: push;
+  -webkit-animation-duration: 0.03s;
+  animation-duration: 0.03s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+
+}*/
+
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{border:none;}
 
-footer{background:#006f53;color:#fff;padding:12px;}
+footer{
+    position: fixed;
+    background:#006f53;
+    bottom: 0px;
+    color:#fff;
+    width: 100%;
+    padding: 10px;
+    
+}
 
+.page{
+    position: relative;
+    bottom: 5px;
+    padding: 2px;
+
+
+}
 .contact .label{color:#000;}
 .bs-callout .label{color:#000;}

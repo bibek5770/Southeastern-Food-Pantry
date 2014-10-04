@@ -3,14 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title - SEPantry</title>
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
     <meta name="viewport" content="width=device-width" />
     
     @Styles.Render("~/Content/")
     @Styles.Render("~/Content/bootstrap.min.css")
     @Styles.Render("~/Content/custom_style.css")
     @Scripts.Render("~/bundles/modernizr")
-
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
     <style>
         /*header *{
             background-color:#048545;
@@ -30,19 +31,20 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
                     
                 </button>
-                <a class="navbar-brand"><img src="~/Content/images/sepantry-l.png" /></a>
+                <a class="navbar-brand" href="Home"><img src="~/Content/images/sepantry-l.png" /></a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Product Inventory", "Index", "Active_Products")</li>
+                    <li>@Html.ActionLink("Inventory", "Index", "Active_Products")</li>
                     <li>@Html.ActionLink("Customers", "Index", "Customer")</li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
     </div>
     
+    <!-- BODY -->
     <div id="body">
         <div class="container">
             <div class="content-start">
@@ -54,18 +56,17 @@
         </div>
             </div>
     </div>
+    
+    <!-- FOOTER-->
     <footer>
         <div class="container">
         <div class="content-wrapper">
-            <div class="float-left">
-                @*<p>&copy; @DateTime.Now.Year</p>*@
-                <p style="text-align:left;font-weight:bold;">&copy;Southeastern Food Pantry @DateTime.Now.Year</p>
+            <div class="footer-center">
+                <p style="text-align:left; font-weight:bold;">&copy;Southeastern Food Pantry @DateTime.Now.Year</p>
             </div>
-            <div class="float-right">
-                <p></p>
+            
             </div>
         </div>
-            </div>
     </footer>
 
     @Scripts.Render("~/bundles/jquery")

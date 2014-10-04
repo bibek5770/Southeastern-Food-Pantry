@@ -60,6 +60,7 @@ namespace SePantry_1.Controllers
                     break;
             }
             //end of sorting
+           
             //for searching data
             
             if (!String.IsNullOrEmpty(searchString))
@@ -136,7 +137,7 @@ namespace SePantry_1.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(active_product).State = EntityState.Modified;
+                db.Entry(active_product).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

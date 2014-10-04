@@ -22,21 +22,21 @@
 <p> </p>
      
 
-@Html.ActionLink("Add product to Inventory", "Create")
+@Html.ActionLink("Add a product to Inventory", "Create")
 <p><br /></p>
 <table class="table">
     <tr>
         <th>
-           @Html.ActionLink("category", "Index", new { sortOrder = ViewBag.NameSortParm })
+           @Html.ActionLink("Category", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th>
-            @Html.ActionLink("title", "Index", new { sortOrder = ViewBag.NameSortParm1 })
+            @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.NameSortParm1 })
         </th>
         <th>
-            @Html.ActionLink("manufacturer", "Index", new { sortOrder = ViewBag.NameSortParm2})
+            @Html.ActionLink("Manufacturer", "Index", new { sortOrder = ViewBag.NameSortParm2})
         </th>
         <th>
-            @Html.ActionLink("isCanned", "Index", new { sortOrder = ViewBag.NameSortParm3 })
+            @Html.ActionLink("Canned", "Index", new { sortOrder = ViewBag.NameSortParm3 })
           
         </th>
         <th></th>
@@ -65,8 +65,10 @@
         </tr>
     }
 </table>
-<br /> <br />
-< Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
-@Html.PagedListPager(Model, page => Url.Action("Index",
+<div class="page">
+    < Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
     new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>
