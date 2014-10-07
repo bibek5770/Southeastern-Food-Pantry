@@ -82,7 +82,7 @@ namespace SePantry_1.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(product_detail).State = EntityState.Modified;
+                db.Entry(product_detail).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
