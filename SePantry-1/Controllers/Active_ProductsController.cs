@@ -92,7 +92,7 @@ namespace SePantry_1.Controllers
 
         //
         // GET: /Active_Products/Create
-
+        [Authorize(Roles="admin")]
         public ActionResult Create()
         {
             return View();
@@ -102,6 +102,7 @@ namespace SePantry_1.Controllers
         // POST: /Active_Products/Create
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Active_Product active_product)
         {
@@ -118,6 +119,7 @@ namespace SePantry_1.Controllers
         //
         // GET: /Active_Products/Edit/5
 
+         [Authorize(Roles = "admin")]
         public ActionResult Edit(int id = 0)
         {
             Active_Product active_product = db.Active_Products.Find(id);
@@ -132,6 +134,7 @@ namespace SePantry_1.Controllers
         // POST: /Active_Products/Edit/5
 
         [HttpPost]
+        [Authorize(Roles = "admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Active_Product active_product)
         {
@@ -146,7 +149,7 @@ namespace SePantry_1.Controllers
 
         //
         // GET: /Active_Products/Delete/5
-
+         [Authorize(Roles = "admin")]
         public ActionResult Delete(int id = 0)
         {
             Active_Product active_product = db.Active_Products.Find(id);
@@ -159,7 +162,7 @@ namespace SePantry_1.Controllers
 
         //
         // POST: /Active_Products/Delete/5
-
+        [Authorize(Roles = "admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -82,7 +82,7 @@ namespace SePantry_1.Controllers
                 //return View(db.UserProfiles.ToList());
             }
         }
-
+        [Authorize(Roles = "admin")]
         // GET: UserProfiles/Details/5
         public ActionResult Details(int? id)
         {
@@ -97,7 +97,7 @@ namespace SePantry_1.Controllers
             }
             return View(userProfile);
         }
-
+        [Authorize(Roles = "admin")]
         // GET: UserProfiles/Create
         public ActionResult Create()
         {
@@ -108,6 +108,7 @@ namespace SePantry_1.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "UserId,UserName,FirstName,LastName,Email,WNumber")] UserProfile userProfile)
         {
@@ -122,6 +123,7 @@ namespace SePantry_1.Controllers
         }
 
         // GET: UserProfiles/Edit/5
+        [Authorize(Roles = "admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -141,6 +143,7 @@ namespace SePantry_1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "admin")]
         public ActionResult Edit([Bind(Include = "UserId,UserName,FirstName,LastName,Email,WNumber")] UserProfile userProfile)
         {
             if (ModelState.IsValid)
@@ -153,6 +156,7 @@ namespace SePantry_1.Controllers
         }
 
         // GET: UserProfiles/Delete/5
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -168,6 +172,7 @@ namespace SePantry_1.Controllers
         }
 
         // POST: UserProfiles/Delete/5
+        [Authorize(Roles = "admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

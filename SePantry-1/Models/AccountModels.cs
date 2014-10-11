@@ -33,12 +33,12 @@ namespace SePantry_1.Models
         public string UserName { get; set; }
         [Required(ErrorMessage = "Your FirstName address is required")]
         public string  FirstName { get; set; }
-        [Required(ErrorMessage = "Your LastName address is required")]
+        //[Required(ErrorMessage = "Your LastName address is required")]
         public string LastName { get; set; }
-        [Required(ErrorMessage = "Your email address is required")]
-        [EmailAddress(ErrorMessage = "Invalid Email Address")]
-        public string Email { get; set; }
-       [Required(ErrorMessage = "Your WNumber address is required")]
+       // [Required(ErrorMessage = "Your email address is required")]
+        //[EmailAddress(ErrorMessage = "Invalid Email Address")]
+       public string Email { get; set; }
+       //[Required(ErrorMessage = "Your WNumber address is required")]
 
         public string WNumber { get; set; }
         public ICollection<Active_Product> Active_Products { get; set; }

@@ -18,10 +18,11 @@
     }
     <p> </p>
 <h2>Customers List</h2>
+@if (Roles.GetRolesForUser().Contains("Admin")) {
     <p>
-     
         @Html.ActionLink("Create New Customer", "Create")
-    </p>
+    
+    </p>}
     <table class="table">
         <tr>
             <th>
@@ -62,11 +63,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.WNumber)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
-            </td>
+            @if (Roles.GetRolesForUser().Contains("Admin")) {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
+               </td>
+            }
         </tr>
     }
 

@@ -104,7 +104,6 @@ C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\System.Web.Http.We
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\Microsoft.Web.WebPages.OAuth.xml
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\obj\Debug\SePantry_1.dll
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\obj\Debug\SePantry_1.pdb
-C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\obj\Debug\SePantry_1.csprojResolveAssemblyReference.cache
 C:\Users\Bibidh\SkyDrive\Documents\REPOS\SEPantry\SePantry-1\obj\Debug\SePantry_1.csprojResolveAssemblyReference.cache
 C:\Users\Bibidh\SkyDrive\Documents\REPOS\SEPantry\SePantry-1\obj\Debug\SePantry_1.dll
 C:\Users\Bibidh\SkyDrive\Documents\REPOS\SEPantry\SePantry-1\obj\Debug\SePantry_1.pdb

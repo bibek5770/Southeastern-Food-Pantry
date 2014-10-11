@@ -14,7 +14,7 @@ using SePantry_1.Models;
 namespace SePantry_1.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
+    //[InitializeSimpleMembership]
     public class AccountController : Controller
     {
         //
@@ -86,6 +86,13 @@ namespace SePantry_1.Controllers
                         Email=model.Email,
                         wNumber = model.WNumber
                     });
+
+                    if (!Roles.RoleExists("User"))
+                    {
+                        Roles.CreateRole("User");
+                    }
+                    Roles.AddUserToRole(model.UserName, "User");
+
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }
