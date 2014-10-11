@@ -17,7 +17,6 @@ namespace SePantry_1.Models
 
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Admin> Admins { get; set; }
-        public DbSet<Customer> Customers { get; set; }
         public DbSet<Active_Product>Active_Products{get;set;}
         public DbSet<Product_Detail> Product_Details { get; set; }
         public DbSet<Product_History> Product_Historys { get; set; }
@@ -30,7 +29,20 @@ namespace SePantry_1.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
+        [Required(ErrorMessage = "Your UserName address is required")]
         public string UserName { get; set; }
+        [Required(ErrorMessage = "Your FirstName address is required")]
+        public string  FirstName { get; set; }
+        [Required(ErrorMessage = "Your LastName address is required")]
+        public string LastName { get; set; }
+        [Required(ErrorMessage = "Your email address is required")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
+        public string Email { get; set; }
+       [Required(ErrorMessage = "Your WNumber address is required")]
+
+        public string WNumber { get; set; }
+        public ICollection<Active_Product> Active_Products { get; set; }
+        public ICollection<Product_History> FoodCheckedOuts { get; set; }
     }
 
     public class RegisterExternalLoginModel
@@ -79,8 +91,28 @@ namespace SePantry_1.Models
     public class RegisterModel
     {
         [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {1} characters long.", MinimumLength = 1)]
+        [Display(Name = "FirstName")]
+        public string FirstName { get; set; }
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {1} characters long.", MinimumLength = 1)]
+        [Display(Name = "LastName")]
+        public string LastName { get; set; }
+
+        [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }
+        [Required]
+        [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "WNumber")]
+        
+        public string WNumber { get; set; }
+
+
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
