@@ -14,46 +14,36 @@ namespace SePantry_1.Migrations
         {
             AutomaticMigrationsEnabled = true;
         }
-        public class InitSecurityDb : DropCreateDatabaseIfModelChanges<UsersContext>
-    {
-            private void SeedMembership()
+       
+
+        protected override void Seed(SePantry_1.Models.UsersContext context)
+        
+        {
+
+            WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+          
+            var membership = (SimpleMembershipProvider)Membership.Provider;
+
+            if (!Roles.RoleExists("Admin"))
             {
+                Roles.CreateRole("Admin");
 
-                WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
-               // var roles = (SimpleRoleProvider)Roles.Provider;
-                var membership = (SimpleMembershipProvider)Membership.Provider;
-
-                if (!Roles.RoleExists("Admin"))
+                if (membership.GetUser("sepantry", false) == null)
                 {
-                    Roles.CreateRole("Admin");
-                }
-               // if (membership.GetUser("bibek5770", false) == null)
-               // {
-                    membership.CreateUserAndAccount(
-                        "sepantry ", "sepantry1231");
-                 //  );
 
+                    WebSecurity.CreateUserAndAccount("sepantry", "sepantry1231", new
+               {
+                   FirstName = "southeastern",
+                   LastName = "adhikari",
+                   Email = "bibek5770@gmail.edu",
+                   wNumber = "w0554322"
+               });
                     if (!Roles.GetRolesForUser("sepantry").Contains("Admin"))
                     {
-                        Roles.AddUsersToRoles(new[] { "bibek5770" }, new[] { "Admin" });
+                        Roles.AddUsersToRoles(new[] { "sepantry" }, new[] { "Admin" });
                     }
                 }
-            }
-
-        //protected override void Seed(SePantry_1.Models.UsersContext context)
-        //{
-        //    //  This method will be called after migrating to the latest version.
-
-        //    //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-        //    //  to avoid creating duplicate seed data. E.g.
-        //    //
-        //    //    context.People.AddOrUpdate(
-        //    //      p => p.FullName,
-        //    //      new Person { FullName = "Andrew Peters" },
-        //    //      new Person { FullName = "Brice Lambson" },
-        //    //      new Person { FullName = "Rowan Miller" }
-        //    //    );
-        //    //
-        //}
+            }       
+        }
     }
-    }
+}
