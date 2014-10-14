@@ -6,14 +6,14 @@
         ViewBag.Title = "Customers List";
     }
 
-    @*<h2>Index</h2>*@
+
 <p>
 
     @using (Html.BeginForm())
     {
     <p align="right">
-        Search Customers: @Html.TextBox("SearchString")
-        <input type="submit" value="Search" /><br />
+        <input class="searchbox" type="search" name="SearchString" placeholder="Search Customers.." />
+        <input class="search" type="submit" value="Search" /><br />
     </p>
     }
     <p> </p>

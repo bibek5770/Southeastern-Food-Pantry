@@ -22,12 +22,12 @@
        
         <ol class="loginReg">
             <li>
-                @Html.LabelFor(m => m.UserName, new { @class = "userLabel" }):
+                @Html.LabelFor(m => m.UserName, new { @class = "userLabel" })<br />
                 @Html.TextBoxFor(m => m.UserName, new { @class = "userbox" })
                 @Html.ValidationMessageFor(m => m.UserName)
             </li>
             <li>
-                @Html.LabelFor(m => m.Password, new { @class = "userLabel" }):
+                @Html.LabelFor(m => m.Password, new { @class = "userLabel" })<br />
                 @Html.PasswordFor(m => m.Password, new { @class = "userbox" })
                 @Html.ValidationMessageFor(m => m.Password)
             </li>

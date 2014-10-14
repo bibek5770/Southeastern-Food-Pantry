@@ -44,7 +44,7 @@ body {
     color:#fafafa;
 }
 
-.loginButton{
+.loginButton, .registerButton{
     position:relative;
     left: 30%;
     padding: 8px 15px;
@@ -53,7 +53,10 @@ body {
     background-color:#207cca;
     color:#fafafa;
 }
-.search:hover, .loginButton:hover{
+.registerButton{
+    left: 160px;
+}
+.search:hover, .loginButton:hover, .registerButton:hover{
     background-color:#1a96ff;
     color:#fafafa;
     transition: background-color 0.55s ease-in-out, color 0.55s ease-in-out, border-bottom-color 0.55s ease-in-out;
@@ -134,7 +137,7 @@ th, th>a, th>a:hover{
 .contact .label{color:#000;}
 .bs-callout .label{color:#000;}
 .userbox{
-    margin-left:10px;
+    margin-top:5px;
 }
 .userbox:focus, .userbox:active,
 .searchbox:focus, .searchbox:active{

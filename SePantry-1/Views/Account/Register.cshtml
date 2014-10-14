@@ -16,21 +16,53 @@
 
     <fieldset>        
         <ol class="loginReg">
-            <li>
-                @Html.LabelFor(m => m.UserName, new { @class = "userLabel" }):
-                @Html.TextBoxFor(m => m.UserName, new { @class = "userbox" })
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password, new { @class = "userLabel" }):
-                @Html.PasswordFor(m => m.Password, new { @class = "userbox" })
-            </li>
-            <li>
-                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "userLabel" }):
-                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "userbox" })
-            </li>
+        <li>
+            @Html.LabelFor(m => m.FirstName, new { @class = "userLabel" })<br />
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "userbox" })
+            @Html.ValidationMessageFor(m => m.FirstName)
+        </li>
+        <li>
+            @Html.LabelFor(m => m.LastName, new { @class = "userLabel" })<br />
+            @Html.TextBoxFor(m => m.LastName, new { @class = "userbox" })
+            @Html.ValidationMessageFor(m => m.LastName)
+        </li>
+        <li>                     
+            @Html.LabelFor(m => m.Email, new { @class = "userLabel" })<br />
+            @Html.TextBoxFor(m => m.Email, new { @class = "userbox" })
+            @Html.ValidationMessageFor(m => m.Email)
+        </li>
+
+        <li>
+           @Html.LabelFor(m => m.UserName, new { @class = "userLabel" })<br />
+           @Html.TextBoxFor(m => m.UserName, new { @class = "userbox" })
+           @Html.ValidationMessageFor(m => m.UserName)
+   
+        </li>
+
+
+        <li>
+            @Html.LabelFor(m => m.WNumber, new { @class = "userLabel" })<br />
+            @Html.PasswordFor(m => m.WNumber, new { @class = "userbox" })
+            @Html.ValidationMessageFor(m => m.WNumber)
+        </li>
+
+        <li>
+            @Html.LabelFor(m => m.Password, new { @class = "userLabel" })<br />
+            @Html.PasswordFor(m => m.Password, new { @class = "userbox" })
+            @Html.ValidationMessageFor(m => m.Password)
+   
+        </li>
+
+        <li>
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "userLabel" })<br />
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "userbox" })
+            @Html.ValidationMessageFor(m => m.ConfirmPassword)
+    
+        </li>
+        
         </ol>
         <br />
-        <input class="loginButton"  type="submit" value="Register" />
+        <input class="registerButton"  type="submit" value="Register" />
     </fieldset>
 }
 <br />
@@ -42,8 +74,3 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-<style>
-    footer {
-        position: fixed;
-    }
-</style>
