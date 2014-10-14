@@ -18,11 +18,12 @@
     }
     <p> </p>
 <h2>Customers List</h2>
-@if (Roles.GetRolesForUser().Contains("Admin")) {
+@*//currently this is not working, so remvoved for midterm presentation*@
+@*@if (Roles.GetRolesForUser().Contains("Admin")) {
     <p>
         @Html.ActionLink("Create New Customer", "Create")
     
-    </p>}
+    </p>}*@
     <table class="table">
         <tr>
             <th>
@@ -67,10 +68,16 @@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
                     @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
+                    @*@Html.ActionLink("Delete", "Delete", new { id=item.UserId })*@
                </td>
             }
         </tr>
     }
 
     </table>
+<div class="page">
+    < Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>

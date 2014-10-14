@@ -15,7 +15,7 @@ namespace SePantry_1.Controllers
 
         //
         // GET: /Admin/
-
+        [Authorize(Roles = "admin")]
         public ActionResult Index()
         {
             return View(db.Admins.ToList());

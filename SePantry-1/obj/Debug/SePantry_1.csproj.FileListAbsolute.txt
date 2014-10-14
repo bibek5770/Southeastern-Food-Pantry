@@ -491,6 +491,7 @@ C:\Users\Prashanta\Documents\285\285Repo\SePantry-1\bin\ko\System.Spatial.resour
 C:\Users\Prashanta\Documents\285\285Repo\SePantry-1\bin\ru\System.Spatial.resources.dll
 C:\Users\Prashanta\Documents\285\285Repo\SePantry-1\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Prashanta\Documents\285\285Repo\SePantry-1\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\Prashanta\Documents\285\285Repo\SePantry-1\obj\Debug\SePantry_1.csprojResolveAssemblyReference.cache
 C:\Users\Prashanta\Documents\285\285Repo\SePantry-1\obj\Debug\SePantry_1.dll
 C:\Users\Prashanta\Documents\285\285Repo\SePantry-1\obj\Debug\SePantry_1.pdb
+=======
+C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\obj\Debug\SePantry_1.csprojResolveAssemblyReference.cache
