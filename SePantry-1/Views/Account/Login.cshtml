@@ -1,46 +1,57 @@
 ﻿@model SePantry_1.Models.LoginModel
 
 @{
-    ViewBag.Title = " Please Log in";
+    ViewBag.Title = "Login";
 }
 
 <hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
+    <h1>@ViewBag.Title</h1>
+    <legend>
+        <h3>
+            Enter your username and password to log in
+        </h3>
+    </legend>
 </hgroup>
 
-
-
-@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
-{
+<section id="loginForm">
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-    <br />
-    <fieldset>
 
-        <ol>
+    <fieldset>
+       
+        <ol class="loginReg">
             <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
+                @Html.LabelFor(m => m.UserName, new { @class = "userLabel" }):
+                @Html.TextBoxFor(m => m.UserName, new { @class = "userbox" })
                 @Html.ValidationMessageFor(m => m.UserName)
             </li>
             <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
+                @Html.LabelFor(m => m.Password, new { @class = "userLabel" }):
+                @Html.PasswordFor(m => m.Password, new { @class = "userbox" })
                 @Html.ValidationMessageFor(m => m.Password)
-            </li><br/>
-            <input type="submit" value="Log in" /><br/>
-            @Html.CheckBoxFor(m => m.RememberMe) @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            </li>
+            <li>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            </li>
         </ol>
-        
+        <input class="loginButton"  type="submit" value="Log in" />
     </fieldset>
-    
- 
-
-
+    <br /> <br />
     <p>
         @Html.ActionLink("Register", "Register") if you don't have an account.
     </p>
 }
+</section>
+
+
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<style>
+    footer {
+        position: fixed;
+    }
+</style>

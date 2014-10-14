@@ -84,6 +84,21 @@ $(function(){
     });
 });
 
+// For autocomplete
+$(function () {
+     var createAutocomplete = function () {
+        var $input = $(this);
+
+        var options = {
+                source: $input.attr("data-SEP-autocomplete")
+        }
+        $input.autocomplete(options);
+        }
+         
+    $("input[data-SEP-autocomplete]").each(createAutocomplete);
+
+});
+
 
 +function ($) {
   'use strict';

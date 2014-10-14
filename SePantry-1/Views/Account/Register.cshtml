@@ -1,64 +1,49 @@
 ﻿@model SePantry_1.Models.RegisterModel
-@*@{
+@{
     ViewBag.Title = "Register";
-}*@
+}
 
 <hgroup class="title">
-    @*<h1>@ViewBag.Title.</h1>*@
-    <h2>Create a new account.</h2>
+    <h1>@ViewBag.Title</h1>
+    <legend> 
+        <h3>Create a new account</h3> 
+    </legend>
 </hgroup>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
 
-    <fieldset>
-        @*<legend>Registration Form</legend>*@
-        <ol>
-                <li>
-                  
-                    @Html.LabelFor(m => m.FirstName)<br />
-                    @Html.TextBoxFor(m => m.FirstName)
-                    @Html.ValidationMessageFor(m => m.FirstName)
-
-                </li>
-                <li>
-                    @Html.LabelFor(m => m.LastName)<br />
-                    @Html.TextBoxFor(m => m.LastName)
-                    @Html.ValidationMessageFor(m => m.LastName)
-                </li>
-                <li>
-                    @Html.LabelFor(m => m.Email)<br />
-                    @Html.TextBoxFor(m => m.Email)
-                    @Html.ValidationMessageFor(m => m.Email)
-                </li>
-                <li>
-                    @Html.LabelFor(m => m.UserName)<br />
-                    @Html.TextBoxFor(m => m.UserName)
-                    @Html.ValidationMessageFor(m => m.UserName)
-                </li>
-
-                <li>
-                    @Html.LabelFor(m => m.WNumber)<br />
-                    @Html.PasswordFor(m => m.WNumber)
-                    @Html.ValidationMessageFor(m => m.WNumber)
-                </li>
-
-                <li>
-                    @Html.LabelFor(m => m.Password)<br />
-                    @Html.PasswordFor(m => m.Password)
-                    @Html.ValidationMessageFor(m => m.Password)
-                </li>
-                <li>
-                    @Html.LabelFor(m => m.ConfirmPassword)<br />
-                    @Html.PasswordFor(m => m.ConfirmPassword)
-                    @Html.ValidationMessageFor(m => m.ConfirmPassword)
-                </li>
-    </ol>
-        <input type="submit" value="Register" />
+    <fieldset>        
+        <ol class="loginReg">
+            <li>
+                @Html.LabelFor(m => m.UserName, new { @class = "userLabel" }):
+                @Html.TextBoxFor(m => m.UserName, new { @class = "userbox" })
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password, new { @class = "userLabel" }):
+                @Html.PasswordFor(m => m.Password, new { @class = "userbox" })
+            </li>
+            <li>
+                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "userLabel" }):
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "userbox" })
+            </li>
+        </ol>
+        <br />
+        <input class="loginButton"  type="submit" value="Register" />
     </fieldset>
 }
+<br />
+<p>
+    @Html.ActionLink("Login", "Login") if you already have an account.
+</p>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<style>
+    footer {
+        position: fixed;
+    }
+</style>

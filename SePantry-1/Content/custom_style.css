@@ -1,79 +1,148 @@
 body {
-  padding-top: 50px;min-height:75%;
+    padding-top: 50px;
+    min-height: 75%;
 }
 
 .starter-template {
   padding: 30px 15px;
-  text-align: center;
+  text-align: center; 
+ 
 }
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.page{
+     text-align:center;
+}
+
 .navbara-header{max-height:60px;}
-.navbar-inverse{background:#006f53;}
-.content-start{margin-top:65px;}
+.navbar-inverse {
+    padding-bottom: 15px;
+    background: #006f54;
+    box-shadow: 0px 10px 30px rgba(50, 50, 50, 0.5) inset;
+}
+.content-start{
+    margin-top:65px;
+   -webkit-animation: fadein 0.75s;
+}
+
+
+.searchbox, .userbox {
+    padding:8px 15px;
+     background:rgba(203, 192, 192, 0.27);
+    /*background:rgba(50, 50, 50, 0.2);*/
+    border:0px solid #dbdbdb;
+}
+.search {
+    position:relative;
+    padding: 8px 15px;
+    left: -4px;
+    border:2px solid #207cca;
+    background-color:#207cca;
+    color:#fafafa;
+}
+
+.loginButton{
+    position:relative;
+    left: 30%;
+    padding: 8px 15px;
+   
+    border:2px solid #207cca;
+    background-color:#207cca;
+    color:#fafafa;
+}
+.search:hover, .loginButton:hover{
+    background-color:#1a96ff;
+    color:#fafafa;
+    transition: background-color 0.55s ease-in-out, color 0.55s ease-in-out, border-bottom-color 0.55s ease-in-out;
+}
+
+.loginReg>li {
+    margin-bottom:10px;
+    padding-bottom:10px;
+}
 .navbar-nav{float:right;}
 .navbar-inverse .navbar-nav>li>a{
+    margin-top: 10px;
+    padding-top:10px;
+    padding-bottom:10px;
     color:#fff;
     text-transform: uppercase;
     font-weight: 400;
-    letter-spacing: .25px; 
-    display: inline-block;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    
+    letter-spacing: .25px;
+    display: inline-block;   
+    z-index:3; 
 }
 
-.navbar-inverse .navbar-nav>li>a:hover{
+.navbar-inverse .navbar-nav>li>a:hover, th>a:hover{
     text-decoration:none;
-    /*background: rgba(255, 255, 255, 0.31);*/
     color:  #dbb42f;
-    border-radius: 8px;
-    transition: background-color 0.45s ease-in-out, color 0.45s ease-in-out, border-bottom-color 0.45s ease-in-out;
+    transition: background-color 0.55s ease-in-out, color 0.55s ease-in-out, border-bottom-color 0.55s ease-in-out;
 }
+
 .navbar-inverse .navbar-nav>li>a.current {
+    -webkit-animation: fadein 0.75s;
     text-decoration:none;
     background: #fff;
     color: #006f53;
     border-radius: 4px;
+    box-shadow: 5px 8px 20px rgba(50, 50, 50, 0.71);   
 }
-
-/*bibidh
-.navbar-inverse .navbar-nav>li>a:active {
-   -webkit-animation-name: push;
-  animation-name: push;
-  -webkit-animation-duration: 0.03s;
-  animation-duration: 0.03s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-
-}*/
-
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{border:none;}
 
 footer{
+    float: none;
     background:#006f53;
     bottom: 0px;
     color:#fff;
     width: 100%;
     padding: 10px;
-	margin-top:25px;
-    
+	margin-top:25px;  
 }
+
+tr:nth-child(even) {background: rgba(204, 204, 204, 0.27)}
+tr:nth-child(odd) {background: #FFF}
+tr:hover{background-color: rgba(0, 111, 84, 0.28);}
+td, th{text-align: left;}
+th, th>a, th>a:hover{
+    font-size: 15px;
+    font-weight: 400;
+    height:40px;
+    background-color: #006f54;
+    border: none;
+    text-decoration: none;
+    color: white;
+}
+.cap-name{text-transform: capitalize;}
+
 
 .page{
     position: relative;
     bottom: 5px;
     padding: 2px;
-
-
-}
+    }
 .navbar-brand{
-	float:none;
+	padding-top:5px;
 }
 .navbar-nav > li > a{
-	top:10px;
-	padding-top:5px;
+	top: -2px;
+	padding-top: 15px;
 	padding-bottom:5px;
 }
-.colorselect{color:#fff;}
 .contact .label{color:#000;}
 .bs-callout .label{color:#000;}
+.userbox{
+    margin-left:10px;
+}
+.userbox:focus, .userbox:active,
+.searchbox:focus, .searchbox:active{
+   background:rgba(50, 50, 50, 0.2)
+  
+}
+
+.checkbox{
+    position: relative;
+    display: inline-block;
+  }

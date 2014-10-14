@@ -285,3 +285,6 @@ C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\ko\System.Spatial.
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\ru\System.Spatial.resources.dll
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Bibidh\SkyDrive\Documents\REPOS\SEPantry\SePantry-1\bin\EntityFramework.dll
+C:\Users\Bibidh\SkyDrive\Documents\REPOS\SEPantry\SePantry-1\bin\EntityFramework.SqlServer.dll
+C:\Users\Bibidh\SkyDrive\Documents\REPOS\SEPantry\SePantry-1\bin\EntityFramework.SqlServer.xml

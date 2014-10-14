@@ -8,44 +8,13 @@
 @{
     ViewBag.Title = "Product Inventory";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Product Inventory - Active products</h2>
-
-<p>  
-     
+<p>       
     @using (Html.BeginForm()){   
 <p align="right">
-    Search Inventory: @Html.TextBox("SearchString") 
-    <input type="submit" value="Search" /><br />
+    <input class="searchbox" type="search" name="SearchString" placeholder="Search Inventory.." />
+    <input class="search" type="submit" value="Search" /><br />
     </p>
     }
-<p> </p>
      
 
 @Html.ActionLink("Add a product to Inventory", "Create")
@@ -55,7 +24,7 @@
         <th>
            @Html.ActionLink("Category", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
-        <th>
+        <th class="cap-name">
             @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.NameSortParm1 })
         </th>
         <th>
@@ -74,7 +43,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.category)
             </td>
-            <td>
+            <td class="cap-name">
                 @Html.DisplayFor(modelItem => item.title)
             </td>
             <td>
