@@ -391,3 +391,4 @@ C:\Users\Utsab Jang Karkee\Google Drive\Spantry\SePantry-1\bin\zh-Hant\System.Sp
 C:\Users\Utsab Jang Karkee\Google Drive\Spantry\SePantry-1\obj\Debug\SePantry_1.csprojResolveAssemblyReference.cache
 C:\Users\Utsab Jang Karkee\Google Drive\Spantry\SePantry-1\obj\Debug\SePantry_1.dll
 C:\Users\Utsab Jang Karkee\Google Drive\Spantry\SePantry-1\obj\Debug\SePantry_1.pdb
+C:\Users\Bibek\Documents\MEGAsync\SEpantryRepo\SePantry-1\obj\Debug\SePantry_1.csprojResolveAssemblyReference.cache

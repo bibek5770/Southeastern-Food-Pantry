@@ -15,7 +15,7 @@ namespace SePantry_1.Controllers
 
         //
         // GET: /Product_History/
-
+        [Authorize(Roles = "user")]
         public ActionResult Index()
         {
             return View(db.Product_Historys.ToList());

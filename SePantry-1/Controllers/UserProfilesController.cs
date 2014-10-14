@@ -16,6 +16,7 @@ namespace SePantry_1.Controllers
     {
         private UsersContext db = new UsersContext();
 
+        [Authorize(Roles = "admin")]
         // GET: UserProfiles
         public ActionResult Index(string sortOrder, string searchString, string currentFilter, int? page)
         {
