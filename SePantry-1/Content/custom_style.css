@@ -149,3 +149,6 @@ th, th>a, th>a:hover{
     position: relative;
     display: inline-block;
   }
+ .valid-summary-errors li{
+	list-style:none;
+}

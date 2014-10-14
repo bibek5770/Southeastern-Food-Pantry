@@ -7,38 +7,46 @@
 <h2>Product Inventory - Product details</h2>
 <br />
 
-<fieldset>
-    <legend>Active_Product</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.category)
+<div class="form-horizontal">
+    <h4>Active Products</h4>
+    <hr />
+    <div class="form-group">
+        @Html.HiddenFor(model => model.Id)
     </div>
-    <div class="display-field">
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
         @Html.DisplayFor(model => model.category)
+        <div class="col-md-3">
+            @Html.DisplayNameFor(model => model.category)
+        </div>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.title)
-    </div>
-    <div class="display-field">
+    <div class="form-group">
         @Html.DisplayFor(model => model.title)
+        <div class="col-md-3">
+            @Html.DisplayNameFor(model => model.title)
+        </div>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.manufacturer)
-    </div>
-    <div class="display-field">
+    <div class="form-group">
         @Html.DisplayFor(model => model.manufacturer)
+        <div class="col-md-3">
+            @Html.DisplayNameFor(model => model.manufacturer)
+        </div>
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.isCanned)
-    </div>
-    <div class="display-field">
+    <div class="form-group">
         @Html.DisplayFor(model => model.isCanned)
+        <div class="col-md-3">
+            @Html.DisplayNameFor(model => model.isCanned)
+        </div>
     </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+</div>
