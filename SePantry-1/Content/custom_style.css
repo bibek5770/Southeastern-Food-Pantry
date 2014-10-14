@@ -21,7 +21,6 @@ body {
 .navbar-inverse {
     padding-bottom: 15px;
     background: #006f54;
-    box-shadow: 0px 10px 30px rgba(50, 50, 50, 0.5) inset;
 }
 .content-start{
     margin-top:65px;
@@ -34,6 +33,7 @@ body {
      background:rgba(203, 192, 192, 0.27);
     /*background:rgba(50, 50, 50, 0.2);*/
     border:0px solid #dbdbdb;
+    width:25%;
 }
 .search {
     position:relative;
@@ -46,15 +46,14 @@ body {
 
 .loginButton, .registerButton{
     position:relative;
-    left: 30%;
     padding: 8px 15px;
-   
+    margin-left:40px;
     border:2px solid #207cca;
     background-color:#207cca;
     color:#fafafa;
 }
 .registerButton{
-    left: 160px;
+    
 }
 .search:hover, .loginButton:hover, .registerButton:hover{
     background-color:#1a96ff;
@@ -65,6 +64,7 @@ body {
 .loginReg>li {
     margin-bottom:10px;
     padding-bottom:10px;
+    list-style:none;
 }
 .navbar-nav{float:right;}
 .navbar-inverse .navbar-nav>li>a{
@@ -91,7 +91,7 @@ body {
     background: #fff;
     color: #006f53;
     border-radius: 4px;
-    box-shadow: 5px 8px 20px rgba(50, 50, 50, 0.71);   
+    /*box-shadow: 5px 8px 20px rgba(50, 50, 50, 0.71);  */ 
 }
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{border:none;}
 

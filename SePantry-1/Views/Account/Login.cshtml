@@ -8,7 +8,7 @@
     <h1>@ViewBag.Title</h1>
     <legend>
         <h3>
-            Enter your username and password to log in
+            Enter your username and password to log in.
         </h3>
     </legend>
 </hgroup>
@@ -20,7 +20,7 @@
 
     <fieldset>
        
-        <ol class="loginReg">
+        <ul class="loginReg">
             <li>
                 @Html.LabelFor(m => m.UserName, new { @class = "userLabel" })<br />
                 @Html.TextBoxFor(m => m.UserName, new { @class = "userbox" })
@@ -35,7 +35,7 @@
                 @Html.CheckBoxFor(m => m.RememberMe)
                 @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
             </li>
-        </ol>
+        </ul>
         <input class="loginButton"  type="submit" value="Log in" />
     </fieldset>
     <br /> <br />
