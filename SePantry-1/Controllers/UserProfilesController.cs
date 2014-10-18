@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using SePantry_1.Models;
 using PagedList;
 using PagedList.Mvc;
+using System.Web.Security;
+using WebMatrix.WebData;
 
 namespace SePantry_1.Controllers
 {
@@ -178,9 +180,28 @@ namespace SePantry_1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            UserProfile userProfile = db.UserProfiles.Find(id);
-            db.UserProfiles.Remove(userProfile);
-            db.SaveChanges();
+            var tmpuser = "";
+            var ctx = new UsersContext();
+            using (ctx)
+            {
+                var firstOrDefault = ctx.UserProfiles.FirstOrDefault(us => us.UserId == id);
+                if (firstOrDefault != null)
+                    tmpuser = firstOrDefault.UserName;
+            }
+
+            string[] allRoles = Roles.GetRolesForUser(tmpuser);
+            Roles.RemoveUserFromRoles(tmpuser, allRoles);
+
+            //Roles.RemoveUserFromRole(tmpuser, "RoleName");
+
+            ((SimpleMembershipProvider)Membership.Provider).DeleteAccount(tmpuser);
+            Membership.Provider.DeleteUser(tmpuser, true);
+            Membership.DeleteUser(tmpuser, true);
+            //UserProfile userProfile = db.UserProfiles.Find(id);
+            
+            ////webpages_UsersInRoles webpages_UsersInRoles = db.webpages_UsersInRoles.Find(id);
+            //db.UserProfiles.Remove(userProfile);
+            //db.SaveChanges();
             return RedirectToAction("Index");
         }
 

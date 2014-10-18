@@ -10,12 +10,20 @@ namespace SePantry_1.Models
     {
         public int Id { get; set; }
        [ Required]
+
+        [Display(Name = "Category")]
         public string category { get; set; }
-          [Required]
+        [Required]
+
+        [Display(Name = "Title")]
         public string title { get; set; }
-          [Required]
+        [Required]
+
+        [Display(Name = "Manufacturer")]
         public string manufacturer { get; set; }
-          [Required]
+        [Required]
+
+        [Display(Name = "Is Canned")]
         public Boolean isCanned { get; set; }
         public virtual UserProfile UserProfile { get; set; }
         public virtual Product_Detail Product_Detail { get; set; }

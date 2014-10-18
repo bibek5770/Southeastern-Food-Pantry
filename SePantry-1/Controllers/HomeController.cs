@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SePantry_1.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,11 +13,15 @@ namespace SePantry_1.Controllers
         {
             return View();
         }
-
+        [Authorize]
         public ActionResult Contact()
         {
+            
             ViewBag.Message = "Your contact page.";
-
+            var context = new UsersContext();
+            var username = User.Identity.Name;
+            var user = context.UserProfiles.SingleOrDefault(u => u.UserName == username);
+            ViewBag.Email = user.Email;
             return View();
         }
     }
