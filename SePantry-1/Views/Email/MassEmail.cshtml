@@ -1,0 +1,29 @@
+﻿@model SePantry_1.Models.MailModel
+@{
+    ViewBag.Title = "Email";
+}
+<legend><h2> Mass Email</h2></legend>
+<h4> From: Sepantry@gmail.com</h4>
+<h5> To: Everyone </h5>
+
+<fieldset>
+    
+        
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @*<p>From: Sepantry@gmail.com</p>
+                @*<p>@Html.TextBoxFor(m => m.From)</p>*@
+            @*<p>To: Everyone </p>*@
+            @*<p>@Html.TextBoxFor(m => m.To)</p>*@
+            <p>Subject: </p>
+            <p>@Html.TextBoxFor(m => m.Subject,new { @class = "userbox" })</p>
+            <p>Body: </p>
+            <p>@Html.TextAreaFor(m => m.Message, new { cols = 100,  rows = 15 })</p>
+            <input class="registerButton" type="submit" value="Send To All" />
+        }
+   
+</fieldset>

@@ -3,9 +3,10 @@
 }
 
 To: @ViewBag.To
-From: lolcats@website.com
-Subject: Complete Registration Process
+From: sepantry@gmail.com
+Subject: @ViewBag.Subject
 
 Hello @ViewBag.UserName,
 @*Modify the local host to domain name later*@
-To complete the registration process click on this link http://localhost/Account/RegisterConfirmation/@ViewBag.ConfirmationToken
+@ViewBag.Message
+@*To complete the registration process click on this link http://localhost/Email/RegisterConfirmation/@ViewBag.ConfirmationToken*@

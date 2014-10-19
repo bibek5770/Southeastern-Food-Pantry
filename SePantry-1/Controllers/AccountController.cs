@@ -77,63 +77,53 @@ namespace SePantry_1.Controllers
         {
             if (ModelState.IsValid)
             {
-                try
+                using (UsersContext db = new UsersContext())
                 {
-                    string confirmationToken = 
-                        WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new
-                                {
-                                    FirstName = model.FirstName,
-                                    LastName=model.LastName,
-                                    Email=model.Email,
-                                    wNumber = model.WNumber
-                                },true);
+                    UserProfile uniqueEmail = db.UserProfiles.FirstOrDefault(u => u.Email.ToLower() == model.Email.ToLower());
 
-                    if (!Roles.RoleExists("User"))
+                    try
                     {
-                        Roles.CreateRole("User");
+                        if (uniqueEmail == null)
+                        {
+
+
+                            string confirmationToken =
+                                WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new
+                                        {
+                                            FirstName = model.FirstName,
+                                            LastName = model.LastName,
+                                            Email = model.Email,
+                                            wNumber = model.WNumber
+                                        }, true);
+
+                            
+                            if (!Roles.RoleExists("User"))
+                            {
+                                Roles.CreateRole("User");
+                            }
+                            Roles.AddUserToRole(model.UserName, "User");
+                            dynamic email = new Email("RegEmail");
+                            email.To = model.Email;
+                            email.UserName = model.UserName;
+                            email.Subject = "Complete Registration Process";
+                            email.Message = "To complete the registration process click on this link http://localhost/Email/RegisterConfirmation/"+confirmationToken;
+                            //email.ConfirmationToken = confirmationToken;
+                            email.Send();
+                            return RedirectToAction("RegisterStepTwo", "Email");
+                            //WebSecurity.Login(model.UserName, model.Password);
+                            //return RedirectToAction("Index", "Home");
+                        }
+                        ModelState.AddModelError("", ErrorCodeToString(MembershipCreateStatus.DuplicateEmail));
                     }
-                    Roles.AddUserToRole(model.UserName, "User");
-                    dynamic email = new Email("RegEmail");
-                    email.To = model.Email;
-                    email.UserName = model.UserName;
-                    email.ConfirmationToken = confirmationToken;
-                    email.Send();
-                    return RedirectToAction("RegisterStepTwo", "Account");
-                    //WebSecurity.Login(model.UserName, model.Password);
-                    //return RedirectToAction("Index", "Home");
-                }
-                catch (MembershipCreateUserException e)
-                {
-                    ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
+                    catch (MembershipCreateUserException e)
+                    {
+                        ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
+                    }
                 }
             }
 
             // If we got this far, something failed, redisplay form
             return View(model);
-        }
-
-        [AllowAnonymous]
-        public ActionResult RegisterStepTwo()
-        {
-            return View();
-        }
-
-        [AllowAnonymous]
-        public ActionResult RegisterConfirmation(string Id)
-        {
-            if (String.IsNullOrEmpty(Id))
-            {
-                return View();
-            }
-            //UsersContext db = new UsersContext();
-            //UserProfile userProfile = db.UserProfiles.Find(Id);
-               
-           if (WebSecurity.ConfirmAccount(Id))
-            {
-                return RedirectToAction("ConfirmationSuccess","Account");
-            }
-                return RedirectToAction("ConfirmationFailure");
-            
         }
         [AllowAnonymous]
         public ActionResult ConfirmationSuccess()
