@@ -64,6 +64,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.WNumber)
             </td>
+            
             @if (Roles.GetRolesForUser().Contains("Admin")) {
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |

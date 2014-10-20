@@ -34,7 +34,7 @@ namespace SePantry_1.Controllers
                 using (var ctx = new UsersContext())
                 {
                     var model = new MailModel();
-                    var customer = ctx.UserProfiles.ToList();
+                    //var customer = ctx.UserProfiles.ToList();
                     model.UserProfiles = ctx.UserProfiles.ToList();
 
                     foreach (var models in model.UserProfiles)

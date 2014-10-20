@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Role Listing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p>&nbsp;</p>
+<div class="spacerBody">
+    
+       
+        @Html.ActionLink("Create New Role", "RoleCreate", "RoleManager") |
+        @Html.ActionLink("Add Role to User", "RoleAddToUser", "RoleManager")
+       
+            <h2>Role Index</h2>
+            <table class="table">
+                <tr>
+                    
+                    <th>Roles</th>
+                    
+                </tr>
+                @foreach (string s in Model)
+                {
+                      <tr> 
+                        <td>@s</td>
+                     
+                        </tr>       
+                }
+            </table>
+</div>

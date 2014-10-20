@@ -39,7 +39,7 @@ namespace SePantry_1.Models
        [EmailAddress(ErrorMessage = "Invalid Email Address")]
        public string Email { get; set; }
        //[Required(ErrorMessage = "Your WNumber address is required")]
-
+        [Required(ErrorMessage = "Your WNumber is required")]
         public string WNumber { get; set; }
         public ICollection<Active_Product> Active_Products { get; set; }
         public ICollection<Product_History> FoodCheckedOuts { get; set; }
@@ -108,6 +108,7 @@ namespace SePantry_1.Models
         public string Email { get; set; }
 
         [Required]
+        [StringLength(7,ErrorMessage ="Please enter a valid Wnumber.",MinimumLength=7)]
         [Display(Name = "WNumber")]
         
         public string WNumber { get; set; }

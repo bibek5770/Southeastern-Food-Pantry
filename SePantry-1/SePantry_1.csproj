@@ -214,6 +214,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Product_DetailController.cs" />
     <Compile Include="Controllers\Product_HistoryController.cs" />
+    <Compile Include="Controllers\RoleManagerController.cs" />
     <Compile Include="Controllers\UserProfilesController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -339,6 +340,11 @@
     <Content Include="Views\Email\RegisterConfirmation.cshtml" />
     <Content Include="Views\Email\MassEmail.cshtml" />
     <Content Include="Views\Email\EmailSendSuccess.cshtml" />
+    <Content Include="Views\RoleManager\RoleCreate.cshtml" />
+    <Content Include="Views\RoleManager\RoleIndex.cshtml" />
+    <Content Include="Views\RoleManager\GetRoles.cshtml" />
+    <Content Include="Views\RoleManager\RoleAddToUser.cshtml" />
+    <Content Include="Views\RoleManager\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Add or Delete Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3>@ViewBag.ResultMessage</h3>
+
+
+
+
+<div>
+    <p>&nbsp;</p>
+    <h4>
+        @Html.ActionLink("Create New Role", "RoleCreate", "RoleManager") | @Html.ActionLink("Roles", "RoleIndex", "RoleManager")
+    </h4>
+    <h3>Get Roles</h3>
+
+    <div class="hr"></div>
+    @using (Html.BeginForm("GetRoles", "RoleManager", "RoleManager"))
+    {
+        @Html.AntiForgeryToken()
+        <p>
+            Username : @Html.TextBox("UserName", "", new { @class = "userbox" })<br /><br />
+
+            <input class="registerButton" type="submit" value="Get Roles for this User" />
+
+        </p>
+    }
+    
+    @if (ViewBag.RolesForThisUser != null)
+    {
+        <text>
+            <h3 style="color:red">Roles for this user </h3>
+    <ol style="color:red">
+        @foreach (string s in ViewBag.RolesForThisUser)
+        {
+            <li>@s</li>
+        }
+    </ol>
+
+        </text>
+    }
+    
+</div>
+<div>
+<h3> Add Role to User</h3>
+    @using (Html.BeginForm("RoleAddToUser", "RoleManager", "RoleManager"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        
+    
+        <p>
+            Username : @Html.TextBox("UserName","", new { @class = "userbox" })<br/>
+          
+            Role Name: @Html.DropDownList("RoleName", ViewBag.Roles as SelectList, new { @class = "userbox" })
+            
+        </p>
+         
+        <input class="registerButton"type="submit" value="Save" />
+    
+    }
+    <br/>
+</div>
+
+    
+<h3>Delete A User from a Role</h3>
+
+@using (Html.BeginForm("DeleteRoleForUser", "RoleManager"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <p>
+        Username : @Html.TextBox("UserName", "", new { @class = "userbox" })<br/>
+        Role Name: @Html.DropDownList("RoleName", ViewBag.Roles as SelectList, new { @class = "userbox" })
+
+    </p>
+
+    <input class="registerButton" type="submit" value="Delete this user from Role" />
+}
