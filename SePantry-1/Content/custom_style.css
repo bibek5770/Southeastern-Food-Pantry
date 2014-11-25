@@ -89,7 +89,7 @@ body {
     -webkit-animation: fadein 0.75s;
     text-decoration:none;
     background: #fff;
-    color: #006f53;
+    color: #006f54;
     border-radius: 4px;
     /*box-shadow: 5px 8px 20px rgba(50, 50, 50, 0.71);  */ 
 }
@@ -97,7 +97,7 @@ body {
 
 footer{
     float: none;
-    background:#006f53;
+    background: #006f54;
     bottom: 0px;
     color:#fff;
     width: 100%;
