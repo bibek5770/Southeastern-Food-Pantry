@@ -17,7 +17,7 @@ namespace SePantry_1.Models
 
         [Display(Name = "Title")]
         public string title { get; set; }
-        [Required]
+     //   [Required]
 
         [Display(Name = "Manufacturer")]
         public string manufacturer { get; set; }

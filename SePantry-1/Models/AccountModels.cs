@@ -20,6 +20,8 @@ namespace SePantry_1.Models
         public DbSet<Active_Product>Active_Products{get;set;}
         public DbSet<Product_Detail> Product_Details { get; set; }
         public DbSet<Product_History> Product_Historys { get; set; }
+        public DbSet<DonorModel> Donors { get; set; }
+
 
     }
 
