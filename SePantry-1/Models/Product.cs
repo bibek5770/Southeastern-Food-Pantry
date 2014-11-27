@@ -17,7 +17,7 @@ namespace SePantry_1.Models
 
         [Display(Name = "Title")]
         public string title { get; set; }
-        [Required]
+     //   [Required]
 
         [Display(Name = "Manufacturer")]
         public string manufacturer { get; set; }
@@ -25,6 +25,10 @@ namespace SePantry_1.Models
 
         [Display(Name = "Is Canned")]
         public Boolean isCanned { get; set; }
+
+        [Display(Name = "Barcode")]
+        public string product_code { get; set; }
+
         public virtual UserProfile UserProfile { get; set; }
         public virtual Product_Detail Product_Detail { get; set; }
     }

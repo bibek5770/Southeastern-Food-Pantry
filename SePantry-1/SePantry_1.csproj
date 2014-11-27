@@ -213,6 +213,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Active_ProductsController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DonorModelsController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Product_DetailController.cs" />
@@ -223,9 +224,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411251939179_barcode-field.cs" />
+    <Compile Include="Migrations\201411251939179_barcode-field.Designer.cs">
+      <DependentUpon>201411251939179_barcode-field.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\DonorModel.cs" />
     <Compile Include="Models\MailModel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -369,7 +375,11 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+<<<<<<< HEAD
     <Content Include="Scripts\forMap.js" />
+=======
+    <Content Include="Scripts\for Map.js" />
+>>>>>>> c19f15a8b1a541104a917f31ff6e23f1aed064c3
     <Content Include="Scripts\for_popup_login.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
@@ -457,6 +467,11 @@
     <Content Include="Views\RoleManager\GetRoles.cshtml" />
     <Content Include="Views\RoleManager\RoleAddToUser.cshtml" />
     <Content Include="Views\RoleManager\Index.cshtml" />
+    <Content Include="Views\DonorModels\Create.cshtml" />
+    <Content Include="Views\DonorModels\Delete.cshtml" />
+    <Content Include="Views\DonorModels\Details.cshtml" />
+    <Content Include="Views\DonorModels\Edit.cshtml" />
+    <Content Include="Views\DonorModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -464,6 +479,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201411251939179_barcode-field.resx">
+      <DependentUpon>201411251939179_barcode-field.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
