@@ -105,8 +105,9 @@ namespace SePantry_1.Controllers
                             dynamic email = new Email("RegEmail");
                             email.To = model.Email;
                             email.UserName = model.UserName;
+                            email.FirstName = model.FirstName;
                             email.Subject = "Complete Registration Process";
-                            email.Message = "To complete the registration process click on this link http://localhost/Email/RegisterConfirmation/"+confirmationToken;
+                            email.Message = "To complete the registration process click on this link: http://localhost/Email/RegisterConfirmation/"+confirmationToken;
                             //email.ConfirmationToken = confirmationToken;
                             email.Send();
                             return RedirectToAction("RegisterStepTwo", "Email");

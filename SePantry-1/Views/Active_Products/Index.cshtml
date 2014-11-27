@@ -21,7 +21,7 @@
 @Html.ActionLink("Add a product to Inventory", "Create")
 }
 <p><br /></p>
-<table class="table">
+<table class="tableShaded">
     <tr>
         <th>
            @Html.ActionLink("Category", "Index", new { sortOrder = ViewBag.NameSortParm })
@@ -35,8 +35,8 @@
         <th>
             @Html.ActionLink("Canned", "Index", new { sortOrder = ViewBag.NameSortParm3 })
           
-        </th>
-        <th></th>
+        </th>@if (Roles.GetRolesForUser().Contains("Admin")) {
+        <th></th>}
     </tr>
 
     @foreach (var item in Model)
@@ -54,7 +54,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.isCanned)
             </td>
-@if (Roles.GetRolesForUser().Contains("Admin")) {
+            @if (Roles.GetRolesForUser().Contains("Admin")) {
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |

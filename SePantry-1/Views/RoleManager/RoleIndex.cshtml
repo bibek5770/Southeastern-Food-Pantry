@@ -3,15 +3,15 @@
     ViewBag.Title = "Role Listing";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<p>&nbsp;</p>
+
 <div class="spacerBody">
     
-       
-        @Html.ActionLink("Create New Role", "RoleCreate", "RoleManager") |
-        @Html.ActionLink("Add Role to User", "RoleAddToUser", "RoleManager")
+    <h4>
+        @Html.ActionLink("Create New Role", "RoleCreate", "RoleManager") | @Html.ActionLink("Roles", "RoleIndex", "RoleManager")
+    </h4>
        
             <h2>Role Index</h2>
-            <table class="table">
+            <table class="tableShaded">
                 <tr>
                     
                     <th>Roles</th>
@@ -26,3 +26,9 @@
                 }
             </table>
 </div>
+
+<style>
+    footer {
+        position: fixed;
+    }
+</style>

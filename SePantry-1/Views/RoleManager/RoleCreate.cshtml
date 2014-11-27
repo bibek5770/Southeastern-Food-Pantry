@@ -5,7 +5,7 @@
 }
 <h3>@ViewBag.ResultMessage</h3>
 <div class="spacerBody">
-    <p>&nbsp;</p>
+    
     <h4> @Html.ActionLink("Roles", "RoleIndex", "RoleManager") | @Html.ActionLink("Add Role to User", "RoleAddToUser", "RoleManager")</h4>
     <h2>Role Create</h2>
 
@@ -21,8 +21,14 @@
                 <p>
                     @Html.TextBox("RoleName", "", new { @class = "userbox" })
                 </p>
-                <input class="registerButton" type="submit" value="Save" />
+             <input class="registerButton" id="inRole4" type="submit" value="Save" />
         </fieldset>
         }
 </div>
 
+
+<style>
+    footer {
+        position: fixed;
+    }
+</style>

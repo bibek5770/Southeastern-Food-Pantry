@@ -17,37 +17,38 @@
     </p>
     }
     <p> </p>
-<h2>Customers List</h2>
+<h2>Customers List</h2><br />
 @*//currently this is not working, so remvoved for midterm presentation*@
 @*@if (Roles.GetRolesForUser().Contains("Admin")) {
     <p>
         @Html.ActionLink("Create New Customer", "Create")
     
     </p>}*@
-    <table class="table">
-        <tr>
-            <th>
-                @Html.ActionLink("User Name", "Index", new { sortOrder = ViewBag.NameSortParm })
-            </th>
-            <th>
-                @Html.ActionLink("First Name", "Index", new { sortOrder = ViewBag.NameSortParm1 })
-            </th>
-            <th>
-                @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm2 })
-            </th>
-            <th>
-                @Html.ActionLink("Email", "Index", new { sortOrder = ViewBag.NameSortParm3 })
-            </th>
-            <th>
-                @Html.ActionLink("wNumber", "Index", new { sortOrder = ViewBag.NameSortParm4 })
-            </th>
-            @*<th>
+    <table class="tableShaded ">
+    <tr>
+        <th>
+            @Html.ActionLink("User Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("First Name", "Index", new { sortOrder = ViewBag.NameSortParm1 })
+        </th>
+        <th>
+            @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm2 })
+        </th>
+        <th>
+            @Html.ActionLink("Email", "Index", new { sortOrder = ViewBag.NameSortParm3 })
+        </th>
+        <th>
+            @Html.ActionLink("wNumber", "Index", new { sortOrder = ViewBag.NameSortParm4 })
+        </th>
+        @*<th>
                 @Html.ActionLink("Password", "Index", new { sortOrder = ViewBag.NameSortParm4 })
             </th>*@
-            <th></th>
-        </tr>
+        <th></th>
+    </tr>
 
-    @foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.UserName)
@@ -64,18 +65,19 @@
             <td>
                 @Html.DisplayFor(modelItem => item.WNumber)
             </td>
-            
-            @if (Roles.GetRolesForUser().Contains("Admin")) {
+
+            @if (Roles.GetRolesForUser().Contains("Admin"))
+            {
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
-               </td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.UserId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.UserId })
+                </td>
             }
         </tr>
     }
 
-    </table>
+</table><br />
 <div class="page">
     < Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 

@@ -52,15 +52,17 @@ body {
     background-color:#207cca;
     color:#fafafa;
 }
-.registerButton{
-    
-}
+
 .search:hover, .loginButton:hover, .registerButton:hover{
     background-color:#1a96ff;
     color:#fafafa;
     transition: background-color 0.55s ease-in-out, color 0.55s ease-in-out, border-bottom-color 0.55s ease-in-out;
 }
-
+#MassEmailSub, #inRole1,#inRole2,#inRole3{
+    margin-top: 5px;
+    margin-left:61% ;
+}
+#inRole1{margin-left: 16% ;}#inRole2{margin-left: 26% ;}#inRole3{margin-left: 14.5% ;}#inRole4{margin-left: 19% ;}#inRole5{margin-left: -5px ;margin-top:45px}
 .loginReg>li {
     margin-bottom:10px;
     padding-bottom:10px;
@@ -79,7 +81,7 @@ body {
     z-index:3; 
 }
 
-.navbar-inverse .navbar-nav>li>a:hover, th>a:hover{
+.navbar-inverse .navbar-nav>li>a:hover, .tableShaded>th>a:hover{
     text-decoration:none;
     color:  #dbb42f;
     transition: background-color 0.55s ease-in-out, color 0.55s ease-in-out, border-bottom-color 0.55s ease-in-out;
@@ -89,7 +91,7 @@ body {
     -webkit-animation: fadein 0.75s;
     text-decoration:none;
     background: #fff;
-    color: #006f53;
+    color: #006f54;
     border-radius: 4px;
     /*box-shadow: 5px 8px 20px rgba(50, 50, 50, 0.71);  */ 
 }
@@ -97,19 +99,24 @@ body {
 
 footer{
     float: none;
-    background:#006f53;
+    background: #006f54;
     bottom: 0px;
     color:#fff;
     width: 100%;
     padding: 10px;
 	margin-top:25px;  
 }
-
-tr:nth-child(even) {background: rgba(204, 204, 204, 0.27)}
-tr:nth-child(odd) {background: #FFF}
-tr:hover{background-color: rgba(0, 111, 84, 0.28);}
-td, th{text-align: left;}
-th, th>a, th>a:hover{
+.tableShaded, .tableShaded tr {
+    width: 100%;
+}
+.tableShaded{
+    margin-bottom:20px;
+}
+.tableShaded tr:nth-child(even) {background: rgba(204, 204, 204, 0.27)}
+.tableShaded tr:nth-child(odd) {background: #FFF}
+.tableShaded tr:hover{background-color: rgba(0, 111, 84, 0.28);}
+.tableShaded td, .tableShaded th{text-align: left;}
+.tableShaded th, .tableShaded th>a, .tableShaded th>a:hover{
     font-size: 15px;
     font-weight: 400;
     height:40px;
@@ -118,7 +125,7 @@ th, th>a, th>a:hover{
     text-decoration: none;
     color: white;
 }
-.cap-name{text-transform: capitalize;}
+.tableShaded cap-name{text-transform: capitalize;}
 
 
 .page{
@@ -144,7 +151,15 @@ th, th>a, th>a:hover{
    background:rgba(50, 50, 50, 0.2)
   
 }
-
+#gmap_canvas {
+    height:480px;
+    width:600px; 
+    float:right;
+    padding-bottom:25px;
+    border-radius:20px;
+    margin-top: -3px;
+    -webkit-animation: fadein 0.75s;
+}
 .checkbox{
     position: relative;
     display: inline-block;
@@ -152,3 +167,11 @@ th, th>a, th>a:hover{
  .valid-summary-errors li{
 	list-style:none;
 }
+ .scrollFix {
+    line-height: 1.35;
+    overflow: hidden;
+    white-space: nowrap;
+}
+ .contactAll{
+     float: left;
+ }

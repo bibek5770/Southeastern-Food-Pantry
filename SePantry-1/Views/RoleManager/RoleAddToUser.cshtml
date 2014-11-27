@@ -3,13 +3,10 @@
     ViewBag.Title = "Add or Delete Roles";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h3>@ViewBag.ResultMessage</h3>
-
-
 
 
 <div>
-    <p>&nbsp;</p>
+    
     <h4>
         @Html.ActionLink("Create New Role", "RoleCreate", "RoleManager") | @Html.ActionLink("Roles", "RoleIndex", "RoleManager")
     </h4>
@@ -22,7 +19,7 @@
         <p>
             Username : @Html.TextBox("UserName", "", new { @class = "userbox" })<br /><br />
 
-            <input class="registerButton" type="submit" value="Get Roles for this User" />
+            <input class="registerButton" id="inRole1" type="submit" value="Get Roles for this User" />
 
         </p>
     }
@@ -57,9 +54,9 @@
             Role Name: @Html.DropDownList("RoleName", ViewBag.Roles as SelectList, new { @class = "userbox" })
             
         </p>
-         
-        <input class="registerButton"type="submit" value="Save" />
-    
+
+    <input class="registerButton" id="inRole2"  type="submit" value="Save" />
+
     }
     <br/>
 </div>
@@ -78,5 +75,5 @@
 
     </p>
 
-    <input class="registerButton" type="submit" value="Delete this user from Role" />
+    <input class="registerButton" id="inRole3"  type="submit" value="Delete this user from Role" />
 }

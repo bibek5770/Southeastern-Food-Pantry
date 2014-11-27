@@ -52,32 +52,32 @@
 @*=======*@
         <div class="form-group">
             @Html.LabelFor(model => model.category, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-3">
-                @Html.EditorFor(model => model.category, new { htmlAttributes = new { @class = "form-control" } })
+            
+                @Html.EditorFor(model => model.category, new { htmlAttributes = new { @class = "userbox" } })
                 @Html.ValidationMessageFor(model => model.category, "", new { @class = "text-danger" })
-            </div>
+
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-3">
-                @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control" } })
+            
+                @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "userbox" } })
                 @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
-            </div>
+           
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.manufacturer, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-3">
-                @Html.EditorFor(model => model.manufacturer, new { htmlAttributes = new { @class = "form-control" } })
+            
+                @Html.EditorFor(model => model.manufacturer, new { htmlAttributes = new { @class = "userbox"} })
                 @Html.ValidationMessageFor(model => model.manufacturer, "", new { @class = "text-danger" })
-            </div>
+            
        </div>
 @*>>>>>>> f31743daabcf9497356a8b767c6f9e29aac9e45c*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.isCanned, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-3">
+            <div class="col-md-1">
                 @Html.EditorFor(model => model.isCanned, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.isCanned, "", new { @class = "text-danger" })
             </div>
@@ -85,7 +85,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" id ="inRole2"value="Save" class="registerButton" />
             </div>
         </div>
         </fieldset>
@@ -100,3 +100,10 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+
+<style>
+    footer {
+        position: fixed;
+    }
+</style>

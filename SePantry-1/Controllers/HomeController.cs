@@ -13,7 +13,7 @@ namespace SePantry_1.Controllers
         {
             return View();
         }
-        [Authorize]
+        
         public ActionResult Contact()
         {
             
@@ -21,7 +21,8 @@ namespace SePantry_1.Controllers
             var context = new UsersContext();
             var username = User.Identity.Name;
             var user = context.UserProfiles.SingleOrDefault(u => u.UserName == username);
-            ViewBag.Email = user.Email;
+            if (System.Web.Security.Roles.GetRolesForUser().Contains("Admin")) {
+                ViewBag.Email = user.Email;}
             return View();
         }
     }

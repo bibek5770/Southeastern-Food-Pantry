@@ -2,10 +2,10 @@
 @{
     ViewBag.Title = "Email";
 }
+<script src="~/ckeditor/ckeditor.js"></script>
 <legend><h2> Mass Email</h2></legend>
 <h4> From: Sepantry@gmail.com</h4>
 <h5> To: Everyone </h5>
-
 <fieldset>
     
         
@@ -21,9 +21,17 @@
             @*<p>@Html.TextBoxFor(m => m.To)</p>*@
             <p>Subject: </p>
             <p>@Html.TextBoxFor(m => m.Subject,new { @class = "userbox" })</p>
-            <p>Body: </p>
-            <p>@Html.TextAreaFor(m => m.Message, new { cols = 100,  rows = 15 })</p>
-            <input class="registerButton" type="submit" value="Send To All" />
+            <p>Message: </p>
+            <p>@Html.TextAreaFor(m => m.Message, new {  cols = 100,  rows = 15 })</p>
+            
+            <input class="registerButton" id="MassEmailSub" type="submit" value="Send To All" />
+          
+          @*  <script>
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.@id = "MessageBox" ,
+            CKEDITOR.replace( 'MessageBox' );
+        </script>*@
+    
         }
    
 </fieldset>

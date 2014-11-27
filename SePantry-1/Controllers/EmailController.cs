@@ -25,9 +25,10 @@ namespace SePantry_1.Controllers
         {
             return View();
         }
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
+
         public ActionResult MassEmail(string subject, string message)
         {
            
@@ -42,7 +43,11 @@ namespace SePantry_1.Controllers
                         dynamic email = new Email("RegEMail");
                         email.To = models.Email;
                         email.UserName = models.UserName;
+                        email.FirstName = models.FirstName;
+                        email.isBodyHtml = true;
+                        
                         email.message = message;
+
                         email.subject = subject;
                         email.Send();
                     };

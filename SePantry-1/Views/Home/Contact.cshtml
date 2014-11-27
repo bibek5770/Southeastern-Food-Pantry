@@ -1,43 +1,45 @@
 ﻿@{
     ViewBag.Title = "Contact Us";
 }
+<div class="contactAll">
+    <hgroup class="title">
+        <h1>@ViewBag.Title</h1>
+    </hgroup>
 
-<hgroup class="title">
-    <h1>@ViewBag.Title</h1>
-</hgroup>
-<div class="bs-callout bs-callout-info">
-    <header>
-        <h3>Phone</h3>
-    </header>
-    <p>
-        <span class="label">Main:</span>
-        <span>985.956.0100</span>
-    </p>
+    <div class="bs-callout bs-callout-info">
+        <header>
+            <h3>Phone</h3>
+        </header>
+        <p>
+            <span>Main:</span>
+            <span>(985)-956-0100</span>
+        </p>
+    </div>
+    <br />
+    <section class="contact">
+        <header>
+            <h3>Email</h3>
+        </header>
+        <p>
+            <span >Contact Email:</span>
+            <span><a href="mailto:sepantry@selu.edu">sepantry@gmail.com</a></span>
+        </p>
+    </section>
+    <br />
+    <section class="contact">
+        <header>
+            <h3>Fall Semester Hours:</h3>
+        </header>
+        <p>
+            Address: Mims Hall, Room 226 <br />
+            Hours: Tuesday- 9AM to 12PM (Noon)<br />
+            Wednesday- 2:30-5:30PM
+        </p>
+    </section>
 </div>
-<br />
-<section class="contact">
-    <header>
-        <h3>Email</h3>
-    </header>
-    <p>
-        <span class="label">Contact Email:</span>
-        <span><a href="mailto:sepantry@selu.edu">sepantry@selu.edu</a></span>
-    </p>
-</section>
-<br />
-<section class="contact">
-    <header>
-        <h3>Fall Semester Hours:</h3>
-    </header>
-    <p> 
-        Address: Mims Hall, Room 226 <br />
-        Hours: Tuesday- 9AM to 12PM (Noon)<br />
-               Wednesday- 2:30-5:30PM
-    </p>
-</section>
+    
 
-<style>
-    footer {
-        position: fixed;
-    }
-</style>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+@Scripts.Render("~/Scripts/forMap.js")
+<div id="gmap_canvas" ></div>
+   

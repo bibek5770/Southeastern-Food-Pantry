@@ -13,7 +13,7 @@ namespace SePantry_1.Models
         public string To { get; set; }
         [Required]
         public string Subject { get; set; }
-        [Required]
+        [Required] 
         public string Message { get; set; }
         public List<UserProfile> UserProfiles { get; set; }
     }
