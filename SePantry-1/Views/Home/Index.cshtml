@@ -1,24 +1,88 @@
 ﻿@{
     ViewBag.Title = "Southeastern Food Pantry";
 }
+
 @section featured {
+
     <section class="featured">
         <div class="content-wrapper">
             <div class="starter-template">
 
-                <img src="~/Content/images/foodpantrylogo.jpg" style="height:10%;width:10%;" />
-                <h1>Southeastern Louisiana University Food Pantry</h1>
-                <p class="lead">Southeastern Louisiana University operates a food pantry for all its students. If you are in need
-                of food, just drop by.</p>
-                <p>All you need is a student ID card.</p>
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="~/Content/images/foodpantrylogo.jpg" id="imgCurr" />
+                            @*<div class="carousel-caption">
+                                    <h3>Welcome !</h3>
+                                </div>*@
+                        </div>
+                        <div class="item">
+                            <img src="~/Content/images/foodpantryupdate-cover.jpg" id="imgCurr" />
+
+                            @*<div class="carousel-caption">
+                                    <h3>Second</h3>
+                                </div>*@
+                        </div>
+                        <div class="item">
+                            <img src="~/Content/images/10428406_1511782449059858_8275103463360208359_o.jpg" id="imgCurr" />
+
+                            @*<div class="carousel-caption">
+                                    <h3>Third</h3>
+                                </div>*@
+                        </div>
+                        <div class="item">
+                            <img src="~/Content/images/image.jpg" id="imgCurr" />
+                            @*<div class="carousel-caption">
+                                    <h3>Fourth</h3>
+                                </div>*@
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+                @*<img src="~/Content/images/foodpantrylogo.jpg" style="height:10%;width:10%;" />
+                    <h1>Southeastern Louisiana University Food Pantry</h1>
+                    <p class="lead">Southeastern Louisiana University operates a food pantry for all its students. If you are in need
+                    of food, just drop by.</p>
+                    <p>All you need is a student ID card.</p>*@
             </div>
         </div>
-        
-        
+
     </section>
-    <style>
-        footer{
-            position:fixed;
-        }
-    </style>
+    <section>
+        <div class="starter-template">
+            @*<img src="~/Content/images/foodpantrylogo.jpg" style="height:10%;width:10%;" />*@
+            <h2>Southeastern Louisiana University Food Pantry</h2>
+            <p class="lead">
+                Southeastern Louisiana University operates a food pantry for all its students. If you are in need
+                of food, just drop by.
+            </p>
+            <p>All you need is a student ID card.</p>
+        </div>
+    </section>
+
+
+
+
 }
+<style>
+    footer {
+        position: fixed;
+    }
+</style>

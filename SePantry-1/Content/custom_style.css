@@ -4,7 +4,7 @@ body {
 }
 
 .starter-template {
-  padding: 30px 15px;
+  padding: 10px 10px;
   text-align: center; 
  
 }
@@ -58,10 +58,14 @@ body {
     color:#fafafa;
     transition: background-color 0.55s ease-in-out, color 0.55s ease-in-out, border-bottom-color 0.55s ease-in-out;
 }
-#MassEmailSub, #inRole1,#inRole2,#inRole3{
+ #inRole1,#inRole2,#inRole3{
     margin-top: 5px;
     margin-left:61% ;
 }
+ #MassEmailSub{
+    margin-top: 5px;
+    margin-left: -3px;
+ }
 #inRole1{margin-left: 16% ;}#inRole2{margin-left: 26% ;}#inRole3{margin-left: 14.5% ;}#inRole4{margin-left: 19% ;}#inRole5{margin-left: -5px ;margin-top:45px}
 .loginReg>li {
     margin-bottom:10px;
@@ -174,4 +178,18 @@ footer{
 }
  .contactAll{
      float: left;
+ }
+
+ .item active .item .carousel slide{
+ 
+   width: 400px; margin: 0 auto; height: 200px;
+ }
+ #imgCurr {
+     width: auto; margin: 0 auto; height:350px;
+ }
+ #carousel-example-generic{
+     width: 80%; margin: 0 auto; height: 350px;
+ }
+ h2{
+     margin-top: 15px;
  }

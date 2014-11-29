@@ -375,11 +375,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-<<<<<<< HEAD
     <Content Include="Scripts\forMap.js" />
-=======
-    <Content Include="Scripts\for Map.js" />
->>>>>>> c19f15a8b1a541104a917f31ff6e23f1aed064c3
     <Content Include="Scripts\for_popup_login.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
@@ -475,7 +471,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="obj\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
