@@ -173,6 +173,19 @@ namespace SePantry_1.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult autocomplete_donor(string keyword)
+        {
+            return Json(getDonors(), JsonRequestBehavior.AllowGet);
+        }
+
+        public List<Donor> getDonors()
+        {
+            return(
+                from Donors in db.Donors
+                select Donors
+                ).ToList();
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();

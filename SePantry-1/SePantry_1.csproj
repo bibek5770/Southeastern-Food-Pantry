@@ -211,9 +211,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Active_ProductsController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\DonorModelsController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PDonorsController.cs" />
     <Compile Include="Controllers\Product_DetailController.cs" />
     <Compile Include="Controllers\Product_HistoryController.cs" />
     <Compile Include="Controllers\RoleManagerController.cs" />
@@ -226,10 +226,18 @@
     <Compile Include="Migrations\201411251939179_barcode-field.Designer.cs">
       <DependentUpon>201411251939179_barcode-field.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411292045351_updatedDonors.cs" />
+    <Compile Include="Migrations\201411292045351_updatedDonors.Designer.cs">
+      <DependentUpon>201411292045351_updatedDonors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201411300123027_donor-id.cs" />
+    <Compile Include="Migrations\201411300123027_donor-id.Designer.cs">
+      <DependentUpon>201411300123027_donor-id.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Admin.cs" />
-    <Compile Include="Models\DonorModel.cs" />
+    <Compile Include="Models\Donor.cs" />
     <Compile Include="Models\MailModel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -375,6 +383,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\forMap.js" />
     <Content Include="Scripts\for_popup_login.js" />
+    <Content Include="Scripts\jquery-ui-1.11.2.js" />
+    <Content Include="Scripts\jquery-ui-1.11.2.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -461,11 +471,11 @@
     <Content Include="Views\RoleManager\GetRoles.cshtml" />
     <Content Include="Views\RoleManager\RoleAddToUser.cshtml" />
     <Content Include="Views\RoleManager\Index.cshtml" />
-    <Content Include="Views\DonorModels\Create.cshtml" />
-    <Content Include="Views\DonorModels\Delete.cshtml" />
-    <Content Include="Views\DonorModels\Details.cshtml" />
-    <Content Include="Views\DonorModels\Edit.cshtml" />
-    <Content Include="Views\DonorModels\Index.cshtml" />
+    <Content Include="Views\PDonors\Create.cshtml" />
+    <Content Include="Views\PDonors\Delete.cshtml" />
+    <Content Include="Views\PDonors\Details.cshtml" />
+    <Content Include="Views\PDonors\Edit.cshtml" />
+    <Content Include="Views\PDonors\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -476,6 +486,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201411251939179_barcode-field.resx">
       <DependentUpon>201411251939179_barcode-field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411292045351_updatedDonors.resx">
+      <DependentUpon>201411292045351_updatedDonors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411300123027_donor-id.resx">
+      <DependentUpon>201411300123027_donor-id.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

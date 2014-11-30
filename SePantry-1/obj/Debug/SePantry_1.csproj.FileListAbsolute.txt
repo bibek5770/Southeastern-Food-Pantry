@@ -107,7 +107,6 @@ C:\Users\Bibidh\Documents\sep\SePantry-1\obj\Debug\SePantry_1.Migrations.barcode
 C:\Users\Bibidh\Documents\sep\SePantry-1\obj\Debug\SePantry_1.csproj.GenerateResource.Cache
 C:\Users\Bibidh\Documents\sep\SePantry-1\obj\Debug\SePantry_1.dll
 C:\Users\Bibidh\Documents\sep\SePantry-1\obj\Debug\SePantry_1.pdb
-C:\Users\Ap\Documents\MEGAsync\Fall 014\285\sepantry-final\SePantry-1\obj\Debug\SePantry_1.csprojResolveAssemblyReference.cache
 C:\Users\Ap\Documents\MEGAsync\Fall 014\285\sepantry-final\SePantry-1\obj\Debug\SePantry_1.Migrations.barcodefield.resources
 C:\Users\Ap\Documents\MEGAsync\Fall 014\285\sepantry-final\SePantry-1\obj\Debug\SePantry_1.csproj.GenerateResource.Cache
 C:\Users\Ap\Documents\MEGAsync\Fall 014\285\sepantry-final\SePantry-1\bin\SePantry_1.dll.config
@@ -218,3 +217,6 @@ C:\Users\Ap\Documents\MEGAsync\Fall 014\285\sepantry-final\SePantry-1\bin\zh-Han
 C:\Users\Ap\Documents\MEGAsync\Fall 014\285\sepantry-final\SePantry-1\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\Ap\Documents\MEGAsync\Fall 014\285\sepantry-final\SePantry-1\obj\Debug\SePantry_1.dll
 C:\Users\Ap\Documents\MEGAsync\Fall 014\285\sepantry-final\SePantry-1\obj\Debug\SePantry_1.pdb
+C:\Users\Ap\Documents\MEGAsync\Fall 014\285\sepantry-final\SePantry-1\obj\Debug\SePantry_1.csprojResolveAssemblyReference.cache
+C:\Users\Ap\Documents\MEGAsync\Fall 014\285\sepantry-final\SePantry-1\obj\Debug\SePantry_1.Migrations.updatedDonors.resources
+C:\Users\Ap\Documents\MEGAsync\Fall 014\285\sepantry-final\SePantry-1\obj\Debug\SePantry_1.Migrations.donorid.resources

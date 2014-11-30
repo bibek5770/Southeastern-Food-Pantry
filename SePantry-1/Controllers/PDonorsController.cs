@@ -10,18 +10,17 @@ using SePantry_1.Models;
 
 namespace SePantry_1.Controllers
 {
-    public class DonorsController : Controller
+    public class PDonorsController : Controller
     {
         private UsersContext db = new UsersContext();
 
-        // GET: Donors
+        // GET: PDonors
         public ActionResult Index()
         {
             return View(db.Donors.ToList());
         }
 
-        // GET: Donors/Details/5
-        [Authorize(Roles = "admin")]
+        // GET: PDonors/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,23 +35,23 @@ namespace SePantry_1.Controllers
             return View(donor);
         }
 
-        // GET: Donors/Create
-        [Authorize(Roles = "admin")]
+        // GET: PDonors/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Donors/Create
+        // POST: PDonors/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "admin")]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,ItemsDonated,Date,Email")] Donor donor)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,EmailAddress,DateRegistered")] Donor donor)
         {
             if (ModelState.IsValid)
             {
+                donor.DateRegistered = DateTime.UtcNow;
+
                 db.Donors.Add(donor);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -61,8 +60,7 @@ namespace SePantry_1.Controllers
             return View(donor);
         }
 
-        // GET: Donors/Edit/5
-        [Authorize(Roles = "admin")]
+        // GET: PDonors/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,13 +75,12 @@ namespace SePantry_1.Controllers
             return View(donor);
         }
 
-        // POST: Donors/Edit/5
+        // POST: PDonors/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "admin")]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,ItemsDonated,Date,Email")] Donor donor)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,EmailAddress,DateRegistered")] Donor donor)
         {
             if (ModelState.IsValid)
             {
@@ -94,8 +91,7 @@ namespace SePantry_1.Controllers
             return View(donor);
         }
 
-        // GET: Donors/Delete/5
-        [Authorize(Roles = "admin")]
+        // GET: PDonors/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -110,10 +106,9 @@ namespace SePantry_1.Controllers
             return View(donor);
         }
 
-        // POST: Donors/Delete/5
+        // POST: PDonors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Donor donor = db.Donors.Find(id);

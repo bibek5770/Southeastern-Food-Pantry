@@ -10,22 +10,21 @@ namespace SePantry_1.Models
     {
         public int Id { get; set; }
         
-        [Required(ErrorMessage = "Error!! FirstName is required")]
+        [Required(ErrorMessage = "Error! First Name is required")]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
-
-        [Required(ErrorMessage = "Error!! LastName is required")]
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Error! Last Name is required")]
         public string LastName { get; set; }
 
-        public string ItemsDonated { get; set; }
-
-
-        [DataType(DataType.DateTime)]
-        public DateTime Date { get; set; }
-
-        [Required(ErrorMessage = "Your email address is required")]
+        [Display(Name = "Email Address")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
-        public string Email { get; set; }
-       
+        public string EmailAddress { get; set; }
+
+        [Display(Name = "Date Time")]
+        [DataType(DataType.DateTime)]
+        public DateTime DateRegistered { get; set; }
+      
     }
 }

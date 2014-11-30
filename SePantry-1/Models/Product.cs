@@ -29,6 +29,9 @@ namespace SePantry_1.Models
         [Display(Name = "Barcode")]
         public string product_code { get; set; }
 
+        [Display(Name = "Product Donor")]
+        public int donor_id { get; set; }
+
         public virtual UserProfile UserProfile { get; set; }
         public virtual Product_Detail Product_Detail { get; set; }
     }

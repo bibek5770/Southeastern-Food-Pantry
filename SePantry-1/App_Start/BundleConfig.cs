@@ -41,6 +41,12 @@ namespace SePantry_1
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include("~/Content/bootstrap*"));
+            
+            //Adding a bundle for Autocomplete
+            bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
+              "~/Content/themes/base/jquery.ui.core.css",             
+              "~/Content/themes/base/jquery.ui.autocomplete.css",             
+              "~/Content/themes/base/jquery.ui.theme.css"));
 
         }
 
