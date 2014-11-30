@@ -173,15 +173,18 @@ namespace SePantry_1.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
         public ActionResult autocomplete_donor(string keyword)
         {
-            return Json(getDonors(), JsonRequestBehavior.AllowGet);
+            return Json(getDonors(keyword), JsonRequestBehavior.AllowGet);
         }
 
-        public List<Donor> getDonors()
+        public List<Donor> getDonors(string keyword)
         {
-            return(
+            return (
                 from Donors in db.Donors
+               // where (Donors.FirstName.Contains(keyword))
+                //where (item => Donors.FirstName.Any(keyword => Donors.LastName.Contains(keyword)))
                 select Donors
                 ).ToList();
         }

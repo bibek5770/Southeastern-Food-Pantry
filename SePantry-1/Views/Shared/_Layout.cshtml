@@ -6,19 +6,16 @@
     
     <meta name="viewport" content="width=device-width" />
     
-    @Styles.Render("~/Content/")
     @Styles.Render("~/Content/bootstrap.min.css")
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/themes/ui-lightness/jquery-ui.ui-lightness.css")
     @Styles.Render("~/Content/custom_style.css")
-    @Styles.Render("~/Content/jquery.ui.autocomplete.css")
     @Styles.Render("~/Content/for_login.css")
     @Styles.Render("~/Content/animate-custom.css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
-    
-
-
-
+ 
     <script src="~/Scripts/for_popup_login.js"></script>
   
     <style>
@@ -45,8 +42,11 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                    @if (!Request.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    }
                     
                     <li>@Html.ActionLink("Inventory", "Index", "Active_Products")</li>
                      
@@ -84,7 +84,8 @@
         <div class="container">
         <div class="content-wrapper">
             <div class="footer-center">
-                <p style="text-align:left; font-weight:bold;">&copy;Southeastern Food Pantry @DateTime.Now.Year</p>
+                <p style="text-align:left; font-weight:bold;" class="col-md-5">&copy;Southeastern Food Pantry - @DateTime.Now.Year</p>
+                <p style="text-align:right; font-weight:bold;" class="footer-links">@Html.ActionLink("Home", "Index", "Home") | @Html.ActionLink("Contact", "Contact", "Home")</p>
             </div>
             
             </div>
