@@ -475,7 +475,6 @@
     <Content Include="Views\UserProfiles\Edit.cshtml" />
     <Content Include="Views\UserProfiles\Index.cshtml" />
     <Content Include="Views\Emails\Web.config" />
-    <Content Include="Views\Emails\_ViewStart.cshtml" />
     <Content Include="Views\Emails\RegEmail.cshtml" />
     <Content Include="Views\Account\ConfirmationSuccess.cshtml" />
     <Content Include="Views\Account\ConfirmationFailure.cshtml" />
@@ -494,6 +493,7 @@
     <Content Include="Views\PDonors\Edit.cshtml" />
     <Content Include="Views\PDonors\Index.cshtml" />
     <Content Include="Views\AdminDashboard.cshtml" />
+    <Content Include="Views\Emails\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

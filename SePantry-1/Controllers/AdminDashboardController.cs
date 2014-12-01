@@ -60,6 +60,10 @@ namespace SePantry_1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Search_Inventory()
         {
+            if (!string.IsNullOrEmpty(Request.Form["search-inventory"]))
+            {
+                
+            }
             return View();
         }
     }

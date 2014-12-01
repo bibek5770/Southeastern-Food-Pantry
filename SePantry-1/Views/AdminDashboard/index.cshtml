@@ -76,7 +76,8 @@
                         <h3>Search Inventory</h3>
                         <p>Scan barcode number or enter anything about the product to search the inventory.</p>
                         <br /><br />
-                        @using (Html.BeginForm("SearchInventory","AdminDashboard",FormMethod.Post))
+                       @*
+                         @using (Html.BeginForm("SearchInventory","AdminDashboard",FormMethod.Post))
                         {
                         @Html.AntiForgeryToken()
                         <div class="col-lg-6">
@@ -88,6 +89,13 @@
                                 </span>
                             </div>
                         </div>
+                        }
+                           *@
+                        @using (Html.BeginForm("Index","Active_Products"))
+                        {
+                            <input type="text" name="SearchString" class="form-control col-md-6" placeholder="Search Inventory.." />
+                            <br /><br /><br />
+                            <input type="submit" value="Search" /><br />
                         }
                     </div>
                     <div class="tab-pane" id="startcheckout">Start Checkout Tab.</div>
