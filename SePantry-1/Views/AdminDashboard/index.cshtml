@@ -1,0 +1,119 @@
+﻿@if (Roles.GetRolesForUser().Contains("Admin"))
+{
+    ViewBag.Title = "Admin Dashboard";
+
+    <h2>Admin Dashboard</h2>
+
+    <br />
+    <!--<ul class="nav nav-pills">
+        <li class="active"><a>Admin Home</a></li>
+        <li>@Html.ActionLink("Customers", "Index", "UserProfiles")</li>
+        <li>@Html.ActionLink("Checkout", "Index", "Admin")</li>
+
+        <li>@Html.ActionLink("EditRoles", "RoleAddToUser", "RoleManager")</li>
+        <li>@Html.ActionLink("MakeUserAccount", "Index", "Admin")</li>
+        <li>@Html.ActionLink("Email", "MassEmail", "Email")</li>
+    </ul>-->
+
+    <div class="row" style="min-height:600px;">
+        <div class="col-md-12 dashboard-container">
+            <div class="col-md-2">
+                <!-- required for floating -->
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tabs-left">
+                    <li class="active text-center">
+                        <a href="#searchinventory" data-toggle="tab">
+                            <h4 class="glyphicon glyphicon-search"></h4><br />Search Inventory
+                        </a>
+                    </li>
+                    <li class="text-center">
+                        <a href="/Active_Products/Create"><h4 class="glyphicon glyphicon-plus"></h4><br />Add Products</a>
+                    </li>
+                    <li class="text-center">
+                        <a href="#startcheckout" data-toggle="tab">
+                            <h4 class="glyphicon glyphicon-shopping-cart"></h4><br />Start Product Checkout
+                        </a>
+                    </li>
+                    <li class="text-center">
+                        <a href="#emailcommunication" data-toggle="tab"><h4 class="glyphicon glyphicon-envelope"></h4><br />Email Communication</a>
+                    </li>
+                    <li class="text-center">
+                        <a href="#manageusers" data-toggle="tab"><h4 class="glyphicon glyphicon-user"></h4><br />Manage Users</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-10">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    @*<div class="tab-pane active" id="addproducts">
+                        @model SePantry_1.Models.Active_Product
+
+                        <h3>Product Inventory - Scan a product to start adding</h3>
+                        <hr />
+                        <div id="productidcheck">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true)
+
+                                <div class="form-horizontal">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-5">
+                                            @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                            }
+                        </div>
+
+                    </div>*@
+                    <div class="tab-pane active" id="searchinventory">
+                        <h3>Search Inventory</h3>
+                        <p>Scan barcode number or enter anything about the product to search the inventory.</p>
+                        <br /><br />
+                        @using (Html.BeginForm("SearchInventory","AdminDashboard",FormMethod.Post))
+                        {
+                        @Html.AntiForgeryToken()
+                        <div class="col-lg-6">
+                            <div class="input-group">
+
+                                <input type="text" name="search-inventory" id="search_inventory" class="form-control single-line">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Search</button>
+                                </span>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                    <div class="tab-pane" id="startcheckout">Start Checkout Tab.</div>
+                    <div class="tab-pane" id="emailcommunication">Messages Tab.</div>
+                    <div class="tab-pane" id="manageusers">Manage Users Tab.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        $("#Id").submit(function (e) {
+            //alert("Handler for .submit() called.");
+            e.preventDefault();
+            var url = '@Url.Action("checkProductID", "Active_Products")';
+            var postdata = $('#Id').val();
+            alert($('#Id').val());
+            $.ajax({
+                type: "POST",
+                url:url,
+                data: postdata.serialize(),
+                success: function (data) {
+
+                }
+            });
+            return false;
+        });
+    </script>
+}

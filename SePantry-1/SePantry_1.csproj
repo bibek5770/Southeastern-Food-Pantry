@@ -211,6 +211,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Active_ProductsController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminDashboardController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PDonorsController.cs" />
@@ -492,9 +493,11 @@
     <Content Include="Views\PDonors\Details.cshtml" />
     <Content Include="Views\PDonors\Edit.cshtml" />
     <Content Include="Views\PDonors\Index.cshtml" />
+    <Content Include="Views\AdminDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AdminDashboard\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
