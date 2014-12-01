@@ -22,7 +22,7 @@ namespace SePantry_1.Models
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string EmailAddress { get; set; }
 
-        [Display(Name = "Date Time")]
+        [Display(Name = "Date Registered")]
         [DataType(DataType.DateTime)]
         public DateTime DateRegistered { get; set; }
       

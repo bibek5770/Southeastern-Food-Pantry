@@ -40,6 +40,7 @@ namespace SePantry_1.Controllers
             ViewBag.NameSortParm1 = String.IsNullOrEmpty(sortOrder) ? "title": "";
             ViewBag.NameSortParm2 = String.IsNullOrEmpty(sortOrder) ? "manufacturer" : "";
             ViewBag.NameSortParm3 = String.IsNullOrEmpty(sortOrder) ? "isCanned" : "";
+            ViewBag.NameSortParm4 = String.IsNullOrEmpty(sortOrder) ? "product_code" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
             switch (sortOrder)
             {
@@ -54,6 +55,9 @@ namespace SePantry_1.Controllers
                     break;
                 case "isCanned":
                     product = product.OrderBy(s => s.isCanned);
+                    break;
+                case "product_code":
+                    product = product.OrderBy(s => s.product_code);
                     break;
                 default:
                     product = product.OrderBy(s => s.category);

@@ -30,8 +30,11 @@
             @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.NameSortParm1 })
         </th>
         <th>
-            @Html.ActionLink("Manufacturer", "Index", new { sortOrder = ViewBag.NameSortParm2})
+            @Html.ActionLink("Product Code", "Index", new { sortOrder = ViewBag.NameSortParm4 })
         </th>
+        @*<th>
+            @Html.ActionLink("Manufacturer", "Index", new { sortOrder = ViewBag.NameSortParm2})
+        </th>*@
         <th>
             @Html.ActionLink("Canned", "Index", new { sortOrder = ViewBag.NameSortParm3 })
           
@@ -49,7 +52,7 @@
                 @Html.DisplayFor(modelItem => item.title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.manufacturer)
+                @Html.DisplayFor(modelItem => item.product_code)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.isCanned)
