@@ -3,10 +3,10 @@
     ViewBag.Title = "Email";
 }
 <script src="~/ckeditor/ckeditor.js"></script>
-<legend><h2> Mass Email</h2></legend>
-<h4> From: Sepantry@gmail.com</h4>
-<h5> To: Everyone </h5>
-<fieldset>
+<legend><h2> Send Email to Users</h2></legend>
+<h4> From: SEPANTRY</h4>
+<h4> To: Everyone </h4>
+<fieldset class="col-md-10">
     
         
         @using (Html.BeginForm())
@@ -19,16 +19,17 @@
                 @*<p>@Html.TextBoxFor(m => m.From)</p>*@
             @*<p>To: Everyone </p>*@
             @*<p>@Html.TextBoxFor(m => m.To)</p>*@
-            <p>Subject: </p>
-            <p>@Html.TextBoxFor(m => m.Subject,new { @class = "userbox" })</p>
-            <p>Message: </p>
-            <p>@Html.TextAreaFor(m => m.Message, new {  cols = 100,  rows = 15 })</p>
-            
-            <input class="registerButton" id="MassEmailSub" type="submit" value="Send To All" />
+            <h4>Subject: </h4>
+            <p>@Html.TextBoxFor(m => m.Subject,new { @class = "form-control col-md-10" })</p>
+            <br /><br />
+            <h4>Message: </h4>
+            <p>@Html.TextAreaFor(m => m.Message, new {cols = 100,  rows = 15, @class="col-md-10 form-control" })</p>
+            <br /><br />
+            <p><input class="registerButton" id="MassEmailSub" style="margin-top:10px;" type="submit" value="Send To All" /></p>
           
           @*  <script>
         // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.@id = "MessageBox" ,
+        // instance, using default configuration.@id = "MessageBox",
             CKEDITOR.replace( 'MessageBox' );
         </script>*@
     

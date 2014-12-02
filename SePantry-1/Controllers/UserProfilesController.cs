@@ -205,6 +205,20 @@ namespace SePantry_1.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public ActionResult autocomplete_users(string keyword)
+        {
+            return Json(getUsers(keyword), JsonRequestBehavior.AllowGet);
+        }
+
+        public List<UserProfile> getUsers(string keyword)
+        {
+            return (
+               from u in db.UserProfiles
+               select u
+               ).ToList();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

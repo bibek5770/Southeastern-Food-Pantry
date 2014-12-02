@@ -1,22 +1,22 @@
-﻿
-
-@{
-    ViewBag.Title = "RoleManagerIndex - SE Pantry.";
+﻿@{
+    ViewBag.Title = "Role Manager - SE Pantry.";
 }
-
-<h2>Welcome, Admin</h2>
 @if (Roles.GetRolesForUser().Contains("Admin"))
 {
-    <br /><br />
+    <h2>User Management Page</h2>
+    <br /><h4>Manage User Roles</h4>
+    <br />
     <ul class="nav nav-pills">
-        <li class="active"><a>Admin Home</a></li>
-        <li>@Html.ActionLink("Create Role", "RoleCreate", "RoleManager")</li>
-        <li>@Html.ActionLink("RoleIndex", "RoleIndex", "RoleManager")</li>
-
-       
-        <li>@Html.ActionLink("Add Role To User", "RoleAddToUser", "RoleManager")</li>
-       
-        
+        <li>@Html.ActionLink("Create User Roles", "RoleCreate", "RoleManager")</li>
+        <li>@Html.ActionLink("View Role Index", "RoleIndex", "RoleManager")</li>  
+        <li>@Html.ActionLink("Assign Roles to a User", "RoleAddToUser", "RoleManager")</li>
+    </ul>
+    
+    <br />
+    <h4>Manage Donors</h4>
+    <ul class="nav nav-pills">
+        <li>@Html.ActionLink("View Donors List", "Index", "PDonors")</li>
+        <li>@Html.ActionLink("Add Donors", "Create", "PDonors")</li>
     </ul>
 }
 

@@ -193,6 +193,24 @@ namespace SePantry_1.Controllers
                 ).ToList();
         }
 
+        //List of products
+        [HttpGet]
+        public ActionResult product_list(string keyword)
+        {
+            return Json(product_list_gen(keyword), JsonRequestBehavior.AllowGet);
+        }
+
+        public List<Active_Product> product_list_gen(string keyword)
+        {
+            
+            return (
+                from Active_Products in db.Active_Products
+                // where (Donors.FirstName.Contains(keyword))
+                //where (item => Donors.FirstName.Any(keyword => Donors.LastName.Contains(keyword)))
+              select Active_Products
+                ).ToList();
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();

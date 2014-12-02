@@ -4,30 +4,22 @@
     ViewBag.Title = "Admin Index - SE Pantry.";
 }
 
-<h2>Welcome, Admin</h2>
 @if (Roles.GetRolesForUser().Contains("Admin"))
 {
         <br /><br />
-    <ul class="nav nav-pills">
+    @*<ul class="nav nav-pills">
         <li class="active"><a>Admin Home</a></li>
         <li>@Html.ActionLink("Customers", "Index", "UserProfiles")</li>
         <li>@Html.ActionLink("Checkout", "Index", "Admin")</li>
-
-
         <li>@Html.ActionLink("Edit Roles", "RoleAddToUser", "RoleManager")</li>
-        
-        
-
-      
         <li>@Html.ActionLink("Donors", "Index", "DonorModels")</li>
         <li>@Html.ActionLink("SendMassEmail", "MassEmail", "Email")</li>
+    </ul>*@
 
-    </ul>
-}
-<!--
+    <h2>Admins</h2>
 <table class="table">
     <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New", "Create")
 </p>
     <tr>
         <th>
@@ -63,9 +55,8 @@
     }
 
 </table>
--->
 
-
+}
 <style>
     footer {
         position: fixed;
