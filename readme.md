@@ -1,9 +1,11 @@
-#CMPS 285 Web-application for Southeastern's Food Pantry
+# Web-application for Southeastern's Food Pantry
 
-Developers:
+A dynamic POS web application designed for Southeastern Louisiana University Food Pantry.
 
-Apurba Adhikary
-Bibek Gautam
-Bibidh Bista
-Utsab Karkee
-Prashanta Panta
+
+## Developers:
+* Apurba Adhikary
+* Bibek Gautam
+* Bibidh Bista
+* Utsab Karkee
+* Prashanta Panta
